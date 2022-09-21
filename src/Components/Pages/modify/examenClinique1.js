@@ -14,6 +14,8 @@ import FormInput3 from "../../Form/FormInput3";
 import { useTranslation } from "react-i18next";
 import "../Tran/i18nextInit";
 import NumericInput from 'react-numeric-input';
+import FormInput4 from '../../Form/FormInput4';
+
 import InputRd from '../../Form/inputrd';
 import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody,  MDBBtn, MDBIcon, MDBModalFooter } from 'mdbreact';
 
@@ -193,30 +195,30 @@ const ExamenClinique = (props) => {
         <FormInput3
           mask="999"
           placeholder={t("Le poids(Kg)")}
-          onChange={handle1Change}
+          onChangeText={handle1Change}
         />
         <FormInput3
           mask="9999"
           placeholder={t("La taille (cm)")}
-          onChange={handle2Change}
+          onChangeText={handle2Change}
         />
         <Text style={tailwind('text-lg p-2 text-gray-700')}>BMI: {poids/Math.pow(taille/100, 2)}</Text>
         <Text style={tailwind('text-lg p-2 text-gray-700')}>Le calcul de la surface corporelle (SC): {0.0003207*Math.pow((1000*poids),(0.7285-(0.0188*Math.log10(poids*1000))))*Math.pow(taille, 0.3)}</Text>
         <Text style={tailwind('text-lg p-2 text-Indigo-700')}>TA aux deux bras après 5 min de repos :</Text>
             <div class="row">
             <label><Text style={tailwind('text-lg p-2 text-gray-700')}>PAS</Text>
-            <NumericInput mobile className="form-control" min={30} max={400}  onChange={handle10Change}/>
+            <FormInput4 className="form-control" min={30} max={400}  onChange={handle10Change}/>
             </label>
             <label><Text style={tailwind('text-lg p-2 text-gray-700')}>PAD</Text>
-            <NumericInput mobile className="form-control" min={0} max={1000} onChange={handle11Change} />
+            <FormInput4 className="form-control" min={0} max={1000} onChange={handle11Change} />
             </label>
             </div>
             <div class="row">
             <label><Text style={tailwind('text-lg p-2 text-gray-700')}>PAS</Text>
-            <NumericInput mobile className="form-control" min={30} max={400}onChange={handle12Change}  />
+            <FormInput4 className="form-control" min={30} max={400}onChange={handle12Change}  />
             </label>
             <label><Text style={tailwind('text-lg p-2 text-gray-700')}>PAD</Text>
-            <NumericInput mobile className="form-control" min={0} max={1000}onChange={handle13Change}  />
+            <FormInput4 className="form-control" min={0} max={1000}onChange={handle13Change}  />
             </label>
             </div>
             <FormInput3
@@ -273,7 +275,7 @@ const ExamenClinique = (props) => {
           {peripherique === true &&
             <FormInput
             placeholder="siége"
-            onChange={handle16Change}
+            onChangeText={handle16Change}
             />}
           <View style={styles.row}>
             <div class="row mx-4">
@@ -304,7 +306,7 @@ const ExamenClinique = (props) => {
           {varices  === true &&
             <FormInput
             placeholder="siége"
-            onChange={handle18Change}
+            onChangeText={handle18Change}
             />}
 
 

@@ -57,7 +57,7 @@ const SearchPatient = (props) => {
           <MDBCard>
 
       <View style={tailwind(' items-center ')} >
-        <Text style={tailwind('text-gray-700 font-bold py-2 text-xl')}>{t("Rechercher un patient11")}</Text>
+        <Text style={tailwind('text-gray-700 font-bold py-2 text-xl')}>"Rechercher un patient"</Text>
         <View style={tailwind('py-8 items-center')}>
           <FormInput
             placeholder="Search...Type CIN"

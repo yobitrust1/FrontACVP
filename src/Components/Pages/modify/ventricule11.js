@@ -9,6 +9,7 @@ import '../home.css';
 import Steps from "../../Form/Steps";
 import FormInput from '../../Form/FormInput';
 import FormInput3 from "../../Form/FormInput3";
+import FormInput4 from '../../Form/FormInput4';
 import { useTranslation } from "react-i18next";
 import "../Tran/i18nextInit"
 import NumericInput from 'react-numeric-input';
@@ -160,78 +161,78 @@ const Ventricule = (props) => {
             <Text style={tailwind('p-2 text-blue-400 text-2xl')}>Dimensions :</Text>
             <div class="row">
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>DTD VG (mm)</Text>
-            <NumericInput mobile className="form-control" min={20} max={90} onChange={handleChange} />
+            <FormInput4 className="form-control" min={20} max={90} onChange={handleChange} />
             </label>
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>DTD VG indexé (ml/m²)</Text>
-            <NumericInput mobile className="form-control" min={10} max={80}  onChange={handle1Change}/>
+            <FormInput4 className="form-control" min={10} max={80}  onChange={handle1Change}/>
             </label>
             </div>
             <div class="row">
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>DTS VG (mm)</Text>
-            <NumericInput mobile className="form-control" min={10} max={80}  onChange={handle2Change}/>
+            <FormInput4 className="form-control" min={10} max={80}  onChange={handle2Change}/>
             </label>
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>DTS  VG indexé (ml/m²)</Text>
-            <NumericInput mobile className="form-control" min={10} max={60} onChange={handle3Change} />
+            <FormInput4 className="form-control" min={10} max={60} onChange={handle3Change} />
             </label>
             </div>
             <div class="row">
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>SIV (mm)</Text>
-            <NumericInput mobile className="form-control" min={1} max={40}  onChange={handle4Change}/>
+            <FormInput4 className="form-control" min={1} max={40}  onChange={handle4Change}/>
             </label>
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>PPVG (mm)</Text>
-            <NumericInput mobile className="form-control" min={1} max={40}  onChange={handle5Change}/>
+            <FormInput4 className="form-control" min={1} max={40}  onChange={handle5Change}/>
             </label>
             </div>
             <div class="row">
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>Rapport SIV/PP</Text>
-            <NumericInput mobile className="form-control" min={0} max={10}  onChange={handle6Change}/>
+            <FormInput4 className="form-control" min={0} max={10}  onChange={handle6Change}/>
             </label>
             </div>
             <div class="row">
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>VTD VG (ml)</Text>
-            <NumericInput mobile className="form-control" min={10} max={400}  onChange={handle7Change}/>
+            <FormInput4 className="form-control" min={10} max={400}  onChange={handle7Change}/>
             </label>
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>VTD VG indexé(ml/m²)</Text>
-            <NumericInput mobile className="form-control" min={10} max={400}  onChange={handle8Change}/>
+            <FormInput4 className="form-control" min={10} max={400}  onChange={handle8Change}/>
             </label>
             </div>
             <div class="row">
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>VTS  VG (ml)</Text>
-            <NumericInput mobile className="form-control" min={10} max={400}  onChange={handle9Change}/>
+            <FormInput4 className="form-control" min={10} max={400}  onChange={handle9Change}/>
             </label>
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>VTS VG indexé(ml/m²)</Text>
-            <NumericInput mobile className="form-control" min={10} max={400}  onChange={handle10Change}/>
+            <FormInput4 className="form-control" min={10} max={400}  onChange={handle10Change}/>
             </label>
             </div>
             <Text style={tailwind('p-2 text-blue-400 text-2xl')}>Fonction systolique :</Text>
             <div class="row">
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>FEVG(TM)(%)</Text>
-            <NumericInput mobile className="form-control" min={1} max={100}  onChange={handle11Change}/>
+            <FormInput4 className="form-control" min={1} max={100}  onChange={handle11Change}/>
             </label>
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>FEVG (biplan)(%)</Text>
-            <NumericInput mobile className="form-control" min={1} max={100}  onChange={handle12Change}/>
+            <FormInput4 className="form-control" min={1} max={100}  onChange={handle12Change}/>
             </label>
             </div>
             <div class="row">
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>FR(%)</Text>
-            <NumericInput mobile className="form-control" min={1} max={100}  onChange={handle13Change}/>
+            <FormInput4 className="form-control" min={1} max={100}  onChange={handle13Change}/>
             </label>
             </div>
             <Text style={tailwind('p-2 text-blue-400 text-2xl')}>Fonction diastolique:</Text>
             <div class="row">
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>Onde E(cm/s)</Text>
-            <NumericInput mobile className="form-control" min={1} max={200}  onChange={handle14Change}/>
+            <FormInput4 className="form-control" min={1} max={200}  onChange={handle14Change}/>
             </label>
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>onde A(cm/s)</Text>
-            <NumericInput mobile className="form-control" min={0} max={200}  onChange={handle15Change}/>
+            <FormInput4 className="form-control" min={0} max={200}  onChange={handle15Change}/>
             </label>
             </div>
             <div class="row">
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>rapport E/A</Text>
-            <NumericInput mobile className="form-control" min={1} max={10}  onChange={handle16Change}/>
+            <FormInput4 className="form-control" min={1} max={10}  onChange={handle16Change}/>
             </label>
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>onde E’(cm/s)</Text>
-            <NumericInput mobile className="form-control" min={1} max={40} 
+            <FormInput4 className="form-control" min={1} max={40} 
             
             
             onChange={handle17Change}/>
@@ -239,7 +240,7 @@ const Ventricule = (props) => {
             </div>
             <div class="row">
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>E/E’</Text>
-            <NumericInput mobile className="form-control" min={1} max={40}  onChange={handle18Change}/>
+            <FormInput4 className="form-control" min={1} max={40}  onChange={handle18Change}/>
             </label>
             </div>
                 <View style={styles.row}>

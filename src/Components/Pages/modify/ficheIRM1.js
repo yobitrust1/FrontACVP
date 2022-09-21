@@ -11,6 +11,7 @@ import ParticlesBg from "particles-bg";
 import '../home.css';
 import Steps from "../../Form/Steps";
 import FormInput3 from "../../Form/FormInput3";
+import FormInput4 from '../../Form/FormInput4';
 import { useTranslation } from "react-i18next";
 import "../Tran/i18nextInit";
 import NumericInput from 'react-numeric-input';
@@ -318,52 +319,52 @@ const FicheIRM = (props) => {
             <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("")}</Text>
             
             <label><h3 class="text-primary">Masse myocardique(g/m²)</h3>
-            <NumericInput mobile className="form-control" min={30} max={400} onChange={handleChange} />
+            <FormInput4 className="form-control" min={30} max={400} onChange={handleChange} />
             </label>
             <label><h3 class="text-primary">Diamètre de l’oreillette gauche(mm)</h3>
-            <NumericInput mobile className="form-control" min={5} max={80}  onChange={handle5Change}/>
+            <FormInput4 className="form-control" min={5} max={80}  onChange={handle5Change}/>
             </label>
             <div class="row">
             <label><h3 class="text-primary">Diamètre de l’oreillette droite(mm)</h3>
-            <NumericInput mobile className="form-control" min={5} max={80}  onChange={handle6Change}/>
+            <FormInput4 className="form-control" min={5} max={80}  onChange={handle6Change}/>
             </label>
             </div>
             <h3 class="text-primary">Etude de ventricule gauche :</h3>
             <div class="row">
             <label><h3>FE (%)</h3>
-            <NumericInput mobile className="form-control" min={1} max={100} onChange={handle7Change} />
+            <FormInput4 className="form-control" min={1} max={100} onChange={handle7Change} />
             </label>
             <label><h3>VTD(ml)</h3>
-            <NumericInput mobile className="form-control" min={10} max={400}  onChange={handle8Change}/>
+            <FormInput4 className="form-control" min={10} max={400}  onChange={handle8Change}/>
             </label>
             </div>
             <div class="row">
             <label><h3>VTD indexé (ml/m²)</h3>
-            <NumericInput mobile className="form-control" min={10} max={400} onChange={handle9Change} />
+            <FormInput4 className="form-control" min={10} max={400} onChange={handle9Change} />
             </label>
             <label><h3>VTS (ml)</h3>
-            <NumericInput mobile className="form-control" min={10} max={400}  onChange={handle10Change}/>
+            <FormInput4 className="form-control" min={10} max={400}  onChange={handle10Change}/>
             </label>
             </div>
             <div class="row">
             <label><h3>VTS indexé (ml/m²)</h3>
-            <NumericInput mobile className="form-control" min={10} max={400} onChange={handle11Change} />
+            <FormInput4 className="form-control" min={10} max={400} onChange={handle11Change} />
             </label>
             <label><h3>VES (ml)</h3>
-            <NumericInput mobile className="form-control" min={10} max={400}  onChange={handle12Change}/>
+            <FormInput4 className="form-control" min={10} max={400}  onChange={handle12Change}/>
             </label>
             </div>
             <div class="row">
             <label><h3>VES indexé (ml/m²)</h3>
-            <NumericInput mobile className="form-control" min={10} max={400} onChange={handle13Change} />
+            <FormInput4 className="form-control" min={10} max={400} onChange={handle13Change} />
             </label>
             <label><h3>Débit cardiaque (ml)</h3>
-            <NumericInput mobile className="form-control" min={0} max={40}  onChange={handle14Change}/>
+            <FormInput4 className="form-control" min={0} max={40}  onChange={handle14Change}/>
             </label>
             </div>
             <div class="row">
             <label><h3>Débit cardiaque indexé (ml/min/m²)</h3>
-            <NumericInput mobile className="form-control" min={0} max={40} onChange={handle15Change} />
+            <FormInput4 className="form-control" min={0} max={40} onChange={handle15Change} />
             </label>
             </div>
             <h3>CINETIQUE SEGMENTAIRE VG :</h3>
@@ -379,60 +380,60 @@ const FicheIRM = (props) => {
             {vg === "Akinésie" &&
                     <FormInput
                     placeholder="Precise le siège"
-                    onChange={handle30Change}
+                    onChangeText={handle30Change}
                   />}
                   {vg === "Dyskinésie" &&
                     <FormInput
                     placeholder="Precise le siège"
-                    onChange={handle31Change}
+                    onChangeText={handle31Change}
                   />}
                   {vg === "Asynchronisme" &&
                     <FormInput
                     placeholder="Precise le siège"
-                    onChange={handle32Change}
+                    onChangeText={handle32Change}
                   />}
                   {vg === "Hypokinésie" &&
                     <FormInput
                     placeholder="Precise le siège"
-                    onChange={handle33Change}
+                    onChangeText={handle33Change}
                   />}
                   
             <h3 class="text-primary">Etude de ventricule droite :</h3>
             <div class="row">
             <label><h3>FE (%)</h3>
-            <NumericInput mobile className="form-control" min={1} max={100} onChange={handle17Change} />
+            <FormInput4 className="form-control" min={1} max={100} onChange={handle17Change} />
             </label>
             <label><h3>VTD(ml)</h3>
-            <NumericInput mobile className="form-control" min={10} max={400}  onChange={handle18Change}/>
+            <FormInput4 className="form-control" min={10} max={400}  onChange={handle18Change}/>
             </label>
             </div>
             <div class="row">
             <label><h3>VTD indexé (ml/m²)</h3>
-            <NumericInput mobile className="form-control" min={10} max={100} onChange={handle19Change} />
+            <FormInput4 className="form-control" min={10} max={100} onChange={handle19Change} />
             </label>
             <label><h3>VTS (ml)</h3>
-            <NumericInput mobile className="form-control" min={10} max={100}  onChange={handle20Change}/>
+            <FormInput4 className="form-control" min={10} max={100}  onChange={handle20Change}/>
             </label>
             </div>
             <div class="row">
             <label><h3>VTS indexé (ml/m²)</h3>
-            <NumericInput mobile className="form-control" min={10} max={400} onChange={handle21Change} />
+            <FormInput4 className="form-control" min={10} max={400} onChange={handle21Change} />
             </label>
             <label><h3>VES (ml)</h3>
-            <NumericInput mobile className="form-control" min={10} max={400}  onChange={handle22Change}/>
+            <FormInput4 className="form-control" min={10} max={400}  onChange={handle22Change}/>
             </label>
             </div>
             <div class="row">
             <label><h3>VES indexé (ml/m²)</h3>
-            <NumericInput mobile className="form-control" min={10} max={400} onChange={handle23Change} />
+            <FormInput4 className="form-control" min={10} max={400} onChange={handle23Change} />
             </label>
             <label><h3>Débit cardiaque (ml)</h3>
-            <NumericInput mobile className="form-control" min={0} max={40}  onChange={handle24Change}/>
+            <FormInput4 className="form-control" min={0} max={40}  onChange={handle24Change}/>
             </label>
             </div>
             <div class="row">
             <label><h3>Débit cardiaque indexé (ml/min/m²)</h3>
-            <NumericInput mobile className="form-control" min={0} max={40} onChange={handle25Change} />
+            <FormInput4 className="form-control" min={0} max={40} onChange={handle25Change} />
             </label>
             </div>
             <h3>CINETIQUE SEGMENTAIRE VD :</h3>
@@ -448,22 +449,22 @@ const FicheIRM = (props) => {
             {longaxe === "Akinésie" &&
                     <FormInput
                     placeholder="Precise le siège"
-                    onChange={handle34Change}
+                    onChangeText={handle34Change}
                   />}
                   {longaxe === "Dyskinésie" &&
                     <FormInput
                     placeholder="Precise le siège"
-                    onChange={handle35Change}
+                    onChangeText={handle35Change}
                   />}
                   {longaxe === "Asynchronisme" &&
                     <FormInput
                     placeholder="Precise le siège"
-                    onChange={handle36Change}
+                    onChangeText={handle36Change}
                   />}
                   {longaxe === "Hypokinésie" &&
                     <FormInput
                     placeholder="Precise le siège"
-                    onChange={handle37Change}
+                    onChangeText={handle37Change}
                   />}
             <h3 class="text-primary">Étude injectée (Gadolinium) :</h3>
             <div class="row mx-4">
@@ -475,44 +476,44 @@ const FicheIRM = (props) => {
             <div>
                 <div class="row mx-4">
             <Text style={tailwind('text-lg p-2 text-Indigo-700')}>- pas de prise de contraste :</Text>
-            <InputRd id="13" name1="Non"  type="radio" value="Non" name="gender773" /> 
-            <InputRd id="14" name1="Oui"  type="radio" value="Oui" name="gender773" /> 
+            <InputRd id="13" name1="Non"  type="radio" value="Non" name="gender773" onChange={handle38Change}  /> 
+            <InputRd id="14" name1="Oui"  type="radio" value="Oui" name="gender773" onChange={handle38Change} /> 
         </div>
                 <div class="row mx-4">
             <Text style={tailwind('text-lg p-2 text-Indigo-700')}>- Prise de type ischémique :</Text>
-            <InputRd id="15" name1="Non" onChange={handle71Change} type="radio" value="Non" name="gender773"onChange={handle38Change} /> 
-            <InputRd id="16" name1="Oui" onChange={handle71Change} type="radio" value="Oui" name="gender773" onChange={handle38Change}/> 
+            <InputRd id="15" name1="Non" onChange={handle71Change} type="radio" /> 
+            <InputRd id="16" name1="Oui" onChange={handle71Change} type="radio"  /> 
         </div>
         {test1 === true &&
                     <div class="row mx-4"><div class="row mx-4">
                     <Text style={tailwind('text-lg p-2 text-Indigo-700')}>sous endocardique :</Text>
-                    <InputRd id="17" name1="Non"  type="radio" value="Non" name="gender7773"onChange={handle39Change} /> 
-                    <InputRd id="18" name1="Oui"  type="radio" value="Oui" name="gender7773"onChange={handle39Change} /> 
+                    <InputRd id="17" name1="Non"  type="radio" value="Non" name="gender7774"onChange={handle39Change} /> 
+                    <InputRd id="18" name1="Oui"  type="radio" value="Oui" name="gender7774"onChange={handle39Change} /> 
                 </div>
                 <div class="row mx-4">
                 <Text style={tailwind('text-lg p-2 text-Indigo-700')}>transmurale :</Text>
-                <InputRd id="19" name1="Non"  type="radio" value="Non" name="gender7773"onChange={handle40Change} /> 
-                <InputRd id="20" name1="Oui"  type="radio" value="Oui" name="gender7773"onChange={handle40Change} /> 
+                <InputRd id="19" name1="Non"  type="radio" value="Non" name="gender7775"onChange={handle40Change} /> 
+                <InputRd id="20" name1="Oui"  type="radio" value="Oui" name="gender7775"onChange={handle40Change} /> 
             </div></div>}
         <div class="row mx-4">
                 <Text style={tailwind('text-lg p-2 text-Indigo-700')}>- Prise non ischémique :</Text>
-                <InputRd id="21" name1="Non" onChange={handle72Change} type="radio" value="Non" name="gender774" /> 
-                <InputRd id="22" name1="Oui" onChange={handle72Change} type="radio" value="Oui" name="gender774" /> 
+                <InputRd id="21" name1="Non" onChange={handle72Change} type="radio" value="Non" name="gender784" /> 
+                <InputRd id="22" name1="Oui" onChange={handle72Change} type="radio" value="Oui" name="gender784" /> 
             </div>
             {test2 === true &&
                     <div class="row mx-4"><div class="row mx-4">
                     <Text style={tailwind('text-lg p-2 text-Indigo-700')}>sous epicardique :</Text>
-                    <InputRd id="23" name1="Non"  type="radio" value="Non" name="gender7773"onChange={handle41Change} /> 
-                    <InputRd id="24" name1="Oui"  type="radio" value="Oui" name="gender7773"onChange={handle41Change} /> 
+                    <InputRd id="23" name1="Non"  type="radio" value="Non" name="gender77723"onChange={handle41Change} /> 
+                    <InputRd id="24" name1="Oui"  type="radio" value="Oui" name="gender77723"onChange={handle41Change} /> 
                 </div>
                 <div class="row mx-4">
                 <Text style={tailwind('text-lg p-2 text-Indigo-700')}>diffuse :</Text>
-                <InputRd id="25" name1="Non"  type="radio" value="Non" name="gender7773"onChange={handle42Change} /> 
-                <InputRd id="26" name1="Oui"  type="radio" value="Oui" name="gender7773"onChange={handle42Change} /> 
+                <InputRd id="25" name1="Non"  type="radio" value="Non" name="gender77753"onChange={handle42Change} /> 
+                <InputRd id="26" name1="Oui"  type="radio" value="Oui" name="gender77753"onChange={handle42Change} /> 
             </div><div class="row mx-4">
                 <Text style={tailwind('text-lg p-2 text-Indigo-700')}>patchy :</Text>
-                <InputRd id="27" name1="Non"  type="radio" value="Non" name="gender7773" onChange={handle43Change}/> 
-                <InputRd id="28" name1="Oui"  type="radio" value="Oui" name="gender7773" onChange={handle43Change}/> 
+                <InputRd id="27" name1="Non"  type="radio" value="Non" name="gender77773" onChange={handle43Change}/> 
+                <InputRd id="28" name1="Oui"  type="radio" value="Oui" name="gender77773" onChange={handle43Change}/> 
             </div></div>}
                   </div>
             }

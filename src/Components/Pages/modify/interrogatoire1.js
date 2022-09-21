@@ -11,6 +11,8 @@ import ParticlesBg from "particles-bg";
 import '../home.css';
 import Steps from "../../Form/Steps";
 import { useTranslation } from "react-i18next";
+import FormInput4 from '../../Form/FormInput4';
+import FormInput3 from '../../Form/FormInput3';
 import "../Tran/i18nextInit";
 import InputRd from '../../Form/inputrd';
 import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody,  MDBBtn, MDBIcon, MDBModalFooter } from 'mdbreact';
@@ -288,7 +290,7 @@ const Interrogatoire = (props) => {
                     </div>
                     </View>
                     {tabac === true &&
-                    <FormInput
+                    <FormInput3
                     placeholder="nombre(P/A)"
                     onChangeText={handle16Change}
                   />}
@@ -300,7 +302,7 @@ const Interrogatoire = (props) => {
                     </div>
                     </View>
                     {chicha === true &&
-                    <FormInput
+                    <FormInput3
                     placeholder="nombre(c/j)"
                     onChangeText={handle18Change}
                   />}
@@ -312,7 +314,7 @@ const Interrogatoire = (props) => {
                     </div>
                     </View>
                     {alcole === true &&
-                    <FormInput
+                    <FormInput3
                     placeholder="nombre(g/j)"
                     onChangeText={handle20Change}
                   />}
@@ -324,7 +326,7 @@ const Interrogatoire = (props) => {
                     </div>
                     </View>
                     {produit === true &&
-                    <FormInput
+                    <FormInput3
                     placeholder="nombre(g/j)"
                   />}
                   <View style={styles.row}>

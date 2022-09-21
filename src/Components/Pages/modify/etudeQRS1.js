@@ -11,6 +11,8 @@ import ParticlesBg from "particles-bg";
 import '../home.css';
 import Steps from "../../Form/Steps";
 import FormInput3 from "../../Form/FormInput3";
+import FormInput4 from '../../Form/FormInput4';
+
 import { useTranslation } from "react-i18next";
 import "../Tran/i18nextInit";
 import InputRd from '../../Form/inputrd';
@@ -183,7 +185,7 @@ const EtudeQRS = (props) => {
         </div>
                    }
             <Text style={tailwind('p-2 text-indigo-700 text-2xl')}>Indice de Sokolow:</Text>
-            <FormInput
+            <FormInput3
             type="number"
             placeholder="Indice de sokolow en mm"
             onChangeText={handle5Change}

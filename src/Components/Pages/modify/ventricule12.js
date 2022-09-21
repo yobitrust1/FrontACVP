@@ -12,6 +12,7 @@ import FormInput3 from "../../Form/FormInput3";
 import { useTranslation } from "react-i18next";
 import "../Tran/i18nextInit"
 import NumericInput from 'react-numeric-input';
+import FormInput4 from '../../Form/FormInput4';
 import InputRd from '../../Form/inputrd';
 import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody,  MDBBtn, MDBIcon, MDBModalFooter } from 'mdbreact';
 let config = {
@@ -291,33 +292,33 @@ const Ventricule2 = (props) => {
             <Text style={tailwind('p-2 text-blue-400 text-2xl ')}>Diamètres :</Text>
             <div class="row">
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>RVOT1(mm)</Text>
-            <NumericInput mobile className="form-control" min={5} max={70}  onChange={handle19Change}/>
+            <FormInput4 className="form-control" min={5} max={70}  onChange={handle19Change}/>
             </label>
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>RVOT2(mm)</Text>
-            <NumericInput mobile className="form-control" min={5} max={70}  onChange={handle20Change}/>
+            <FormInput4 className="form-control" min={5} max={70}  onChange={handle20Change}/>
             </label>
             </div>
             
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>RVOTP(mm)</Text>
-            <NumericInput mobile className="form-control" min={5} max={70}  onChange={handle21Change}/>
+            <FormInput4 className="form-control" min={5} max={70}  onChange={handle21Change}/>
             </label>
             <Text style={tailwind('p-2 text-blue-400 text-2xl ')}>Volume :</Text>
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>Volume (ml)</Text>
-            <NumericInput mobile className="form-control" min={10} max={400}  onChange={handle22Change}/>
+            <FormInput4 className="form-control" min={10} max={400}  onChange={handle22Change}/>
             </label>
             
             <Text style={tailwind('p-2 text-blue-400 text-2xl')}>Fonction :</Text>
             <div class="row">
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>TAPSE(mm)</Text>
-            <NumericInput mobile className="form-control" min={1} max={40}  onChange={handle23Change}/>
+            <FormInput4 className="form-control" min={1} max={40}  onChange={handle23Change}/>
             </label>
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>onde S’(cm/s)</Text>
-            <NumericInput mobile className="form-control" min={1} max={40}  onChange={handle24Change}/>
+            <FormInput4 className="form-control" min={1} max={40}  onChange={handle24Change}/>
             </label>
             </div>
             <Text style={tailwind('p-2 text-blue-400 text-2xl')}>Rapport VD/VG</Text>
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>Rapport VD/VG</Text>
-            <NumericInput mobile className="form-control" min={0} max={4}  onChange={handle25Change}/>
+            <FormInput4 className="form-control" min={0} max={4}  onChange={handle25Change}/>
             </label>
             <Text style={tailwind('p-2 text-indigo-700 text-2xl')}>HTAP :</Text>
             <div class="row mx-4">
@@ -328,39 +329,39 @@ const Ventricule2 = (props) => {
             
             <div class="row">
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>PAPS (mmhg)</Text>
-            <NumericInput mobile className="form-control" min={0} max={150}  onChange={handle26Change}/>
+            <FormInput4 className="form-control" min={0} max={150}  onChange={handle26Change}/>
             </label>
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>PAPM (mmhg)</Text>
-            <NumericInput mobile className="form-control" min={0} max={100}  onChange={handle27Change}/>
+            <FormInput4 className="form-control" min={0} max={100}  onChange={handle27Change}/>
             </label>
             </div>
             
             <Text style={tailwind('p-2 text-indigo-700 text-2xl')}>Oreillette gauche :</Text>
             <div class="row">
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>Diamètre(mm)</Text>
-            <NumericInput mobile className="form-control" min={5} max={80}  onChange={handle29Change}/>
+            <FormInput4 className="form-control" min={5} max={80}  onChange={handle29Change}/>
             </label>
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>Surface(cm²)</Text>
-            <NumericInput mobile className="form-control" min={5} max={60}  onChange={handle30Change}/>
+            <FormInput4 className="form-control" min={5} max={60}  onChange={handle30Change}/>
             </label>
             </div>
             <div class="row">
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>Volume indexé(ml/m²)</Text>
-            <NumericInput mobile className="form-control" min={5} max={80}  onChange={handle31Change}/>
+            <FormInput4 className="form-control" min={5} max={80}  onChange={handle31Change}/>
             </label>
             </div>
             <Text style={tailwind('p-2 text-indigo-700 text-2xl')}>Oreillette droite :</Text>
             <div class="row">
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>Diamètre(mm)</Text>
-            <NumericInput mobile className="form-control" min={5} max={70}  onChange={handle32Change}/>
+            <FormInput4 className="form-control" min={5} max={70}  onChange={handle32Change}/>
             </label>
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>Surface(cm²)</Text>
-            <NumericInput mobile className="form-control" min={5} max={70}  onChange={handle33Change}/>
+            <FormInput4 className="form-control" min={5} max={70}  onChange={handle33Change}/>
             </label>
             </div>
             <div class="row">
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>Volume indexé(ml/m²)</Text>
-            <NumericInput mobile className="form-control" min={5} max={80}  onChange={handle34Change}/>
+            <FormInput4 className="form-control" min={5} max={80}  onChange={handle34Change}/>
             </label>
             </div>
             <Text style={tailwind('p-2 text-indigo-700 text-2xl')}>Septum inter auriculaire :</Text>
@@ -372,18 +373,18 @@ const Ventricule2 = (props) => {
             <Text style={tailwind('p-2 text-indigo-700 text-2xl')}>Valve aortique et aorte ascendant:</Text>
             <div class="row">
             <label><Text style={tailwind('p-2 text-blue-400 text-2xl')}>Anneau aortique(mm)</Text>
-            <NumericInput mobile className="form-control" min={10} max={60}  onChange={handle36Change}/>
+            <FormInput4 className="form-control" min={10} max={60}  onChange={handle36Change}/>
             </label>
             <label><Text style={tailwind('p-2 text-blue-400 text-2xl')}>Sinus de Valsalva(mm)</Text>
-            <NumericInput mobile className="form-control" min={10} max={80}  onChange={handle37Change}/>
+            <FormInput4 className="form-control" min={10} max={80}  onChange={handle37Change}/>
             </label>
             </div>
             <div class="row">
             <label><Text style={tailwind('p-2 text-blue-400 text-2xl')}>Sinus sino tubaire(mm)</Text>
-            <NumericInput mobile className="form-control" min={10} max={60}  onChange={handle38Change}/>
+            <FormInput4 className="form-control" min={10} max={60}  onChange={handle38Change}/>
             </label>
             <label><Text style={tailwind('p-2 text-blue-400 text-2xl')}>Aorte ascendant(mm)</Text>
-            <NumericInput mobile className="form-control" min={10} max={100}  onChange={handle39Change}/>
+            <FormInput4 className="form-control" min={10} max={100}  onChange={handle39Change}/>
             </label>
             </div>
             <Text style={tailwind('p-2 text-blue-400 text-2xl')}>Continence</Text>
@@ -399,9 +400,9 @@ const Ventricule2 = (props) => {
             <InputRd id="8" name1="Oui" onChange={handle47Change} type="radio" value="Oui" name="gender3" /> 
         </div>
         {rao === true &&
-                    <FormInput
+                    <FormInput3
                     placeholder="préciser surface en cm2"
-                    onChange={handle100Change}
+                    onChangeText={handle100Change}
                   />}
         <div class="row mx-4">
                 <Text style={tailwind('text-lg p-2 text-Indigo-700')}>IAo :</Text>
@@ -411,13 +412,13 @@ const Ventricule2 = (props) => {
             {iao === true &&
                     <FormInput
                     placeholder="préciser grade"
-                    onChange={handle101Change}
+                    onChangeText={handle101Change}
                   />}
                   </div>
             }
             <div class="row">
             <label><Text style={tailwind('p-2 text-blue-400 text-2xl')}>Nombre de cusp</Text>
-            <NumericInput mobile className="form-control" min={1} max={3}  onChange={handle41Change}/>
+            <FormInput4 className="form-control" min={1} max={3}  onChange={handle41Change}/>
             </label>
             </div>
             <Text style={tailwind('p-2 text-blue-400 text-2xl')}>Naissance coronaire :</Text>
@@ -429,7 +430,7 @@ const Ventricule2 = (props) => {
             {anomalie === true &&
                     <FormInput
                     placeholder="Preciser l'anomalie"
-                    onChange={handle102Change}
+                    onChangeText={handle102Change}
                   />}
             <Text style={tailwind('p-2 text-indigo-700 text-2xl')}>Crosse de l’aorte :</Text>
             <div class="row mx-4">
@@ -459,7 +460,7 @@ const Ventricule2 = (props) => {
         {im === true &&
                     <FormInput
                     placeholder="préciser grade"
-                    onChange={handle103Change}
+                    onChangeText={handle103Change}
                   />}
         <div class="row mx-4">
                 <Text style={tailwind('text-lg p-2 text-Indigo-700')}>RM :</Text>
@@ -467,9 +468,9 @@ const Ventricule2 = (props) => {
                 <InputRd id="22" name1="Oui" onChange={handle72Change} type="radio" value="Oui" name="gender74" /> 
             </div>
             {rm === true &&
-                    <FormInput
+                    <FormInput3
                     placeholder="préciser surface en cm2"
-                    onChange={handle104Change}
+                    onChangeText={handle104Change}
                   />}
                   </div>
             }  

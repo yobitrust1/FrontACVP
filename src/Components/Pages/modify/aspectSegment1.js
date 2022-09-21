@@ -12,6 +12,8 @@ import ParticlesBg from "particles-bg";
 import '../home.css';
 import Steps from "../../Form/Steps";
 import FormInput3 from "../../Form/FormInput3";
+import FormInput4 from '../../Form/FormInput4';
+
 import { useTranslation } from "react-i18next";
 import "../Tran/i18nextInit";
 import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody,  MDBBtn, MDBIcon, MDBModalFooter } from 'mdbreact';
@@ -99,11 +101,11 @@ const AspectSegment = (props) => {
             <Text style={tailwind('p-2 text-indigo-700 text-2xl')}>Intervalle QT :</Text>
         <FormInput3
           placeholder="QT mesuré en ms en D2 et V5:"
-          onChange={handle4Change}
+          onChangeText={handle4Change}
         />
         <FormInput3
           placeholder="QT corrigé en ms:"
-          onChange={handle5Change}
+          onChangeText={handle5Change}
         />
 
 

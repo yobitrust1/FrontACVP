@@ -14,6 +14,7 @@ import FormInput3 from "../../Form/FormInput3";
 import { useTranslation } from "react-i18next";
 import "../Tran/i18nextInit";
 import NumericInput from 'react-numeric-input';
+import FormInput4 from '../../Form/FormInput4';
 import InputRd from '../../Form/inputrd';
 import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody,  MDBBtn, MDBIcon, MDBModalFooter } from 'mdbreact';
 let config = {
@@ -426,18 +427,18 @@ var handle117Change = (text) => {
             <Text style={tailwind('p-2 text-blue-400 text-2xl')}>1er Palier(2min):</Text>
             <div class="row">
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>Charge (w)</Text>
-            <NumericInput mobile className="form-control" min={0} max={400} onChange={handle1Change} />
+            <FormInput4 className="form-control" min={0} max={400} onChange={handle1Change} />
             </label>   
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>PAS (mmhg)</Text>
-            <NumericInput mobile className="form-control" min={1} max={30} onChange={handle2Change} />
+            <FormInput4 className="form-control" min={1} max={30} onChange={handle2Change} />
             </label>
             </div>
             <div class="row">
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>PAD (mmhg)</Text>
-            <NumericInput mobile className="form-control" min={1} max={20} onChange={handle3Change} />
+            <FormInput4 className="form-control" min={1} max={20} onChange={handle3Change} />
             </label>   
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>FC (% de la FMT)</Text>
-            <NumericInput mobile className="form-control" min={10} max={120} onChange={handle4Change} />
+            <FormInput4 className="form-control" min={10} max={120} onChange={handle4Change} />
             </label>
             </div>
             <div class="row">
@@ -448,7 +449,7 @@ var handle117Change = (text) => {
             {trouCon === true &&
                     <FormInput
                     placeholder="Preciser"
-                    onChange={handle100Change}
+                    onChangeText={handle100Change}
                   />}
             <div class="row mx-4">
                 <Text style={tailwind('text-lg p-2 text-Indigo-700')}>troubles de répolarisation</Text>
@@ -460,7 +461,7 @@ var handle117Change = (text) => {
             {trouRep === true &&
                     <FormInput
                     placeholder="Preciser"
-                    onChange={handle101Change}
+                    onChangeText={handle101Change}
                   />}
             <div class="row mx-4">
                 <Text style={tailwind('text-lg p-2 text-Indigo-700')}>troubles de rythme</Text>
@@ -470,24 +471,24 @@ var handle117Change = (text) => {
             {trouRyt === true &&
                     <FormInput
                     placeholder="Preciser"
-                    onChange={handle102Change}
+                    onChangeText={handle102Change}
                   />}
 
 <Text style={tailwind('p-2 text-blue-400 text-2xl')}>2eme Palier(2min):</Text>
             <div class="row">
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>Charge (w)</Text>
-            <NumericInput mobile className="form-control" min={0} max={400} onChange={handle21Change} />
+            <FormInput4 className="form-control" min={0} max={400} onChange={handle21Change} />
             </label>   
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>PAS (mmhg)</Text>
-            <NumericInput mobile className="form-control" min={1} max={30} onChange={handle22Change} />
+            <FormInput4 className="form-control" min={1} max={30} onChange={handle22Change} />
             </label>
             </div>
             <div class="row">
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>PAD (mmhg)</Text>
-            <NumericInput mobile className="form-control" min={1} max={20} onChange={handle23Change} />
+            <FormInput4 className="form-control" min={1} max={20} onChange={handle23Change} />
             </label>   
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>FC (% de la FMT)</Text>
-            <NumericInput mobile className="form-control" min={10} max={120} onChange={handle24Change} />
+            <FormInput4 className="form-control" min={10} max={120} onChange={handle24Change} />
             </label>
             </div>
             <div class="row">
@@ -498,7 +499,7 @@ var handle117Change = (text) => {
             {trouCon === true &&
                     <FormInput
                     placeholder="Preciser"
-                    onChange={handle103Change}
+                    onChangeText={handle103Change}
                   />}
             <div class="row mx-4">
                 <Text style={tailwind('text-lg p-2 text-Indigo-700')}>troubles de répolarisation</Text>
@@ -510,7 +511,7 @@ var handle117Change = (text) => {
             {trouRep === true &&
                     <FormInput
                     placeholder="Preciser"
-                    onChange={handle104Change}
+                    onChangeText={handle104Change}
                   />}
             <div class="row mx-4">
                 <Text style={tailwind('text-lg p-2 text-Indigo-700')}>troubles de rythme</Text>
@@ -520,24 +521,24 @@ var handle117Change = (text) => {
             {trouRyt === true &&
                     <FormInput
                     placeholder="Preciser"
-                    onChange={handle105Change}
+                    onChangeText={handle105Change}
                   />}
 
 <Text style={tailwind('p-2 text-blue-400 text-2xl')}>3eme Palier(2min):</Text>
             <div class="row">
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>Charge (w)</Text>
-            <NumericInput mobile className="form-control" min={0} max={400} onChange={handle31Change} />
+            <FormInput4 className="form-control" min={0} max={400} onChange={handle31Change} />
             </label>   
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>PAS (mmhg)</Text>
-            <NumericInput mobile className="form-control" min={1} max={30} onChange={handle32Change} />
+            <FormInput4 className="form-control" min={1} max={30} onChange={handle32Change} />
             </label>
             </div>
             <div class="row">
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>PAD (mmhg)</Text>
-            <NumericInput mobile className="form-control" min={1} max={20} onChange={handle33Change} />
+            <FormInput4 className="form-control" min={1} max={20} onChange={handle33Change} />
             </label>   
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>FC (% de la FMT)</Text>
-            <NumericInput mobile className="form-control" min={10} max={120} onChange={handle34Change} />
+            <FormInput4 className="form-control" min={10} max={120} onChange={handle34Change} />
             </label>
             </div>
             <div class="row">
@@ -548,7 +549,7 @@ var handle117Change = (text) => {
             {trouCon === true &&
                     <FormInput
                     placeholder="Preciser"
-                    onChange={handle106Change}
+                    onChangeText={handle106Change}
                   />}
             <div class="row mx-4">
                 <Text style={tailwind('text-lg p-2 text-Indigo-700')}>troubles de répolarisation</Text>
@@ -560,7 +561,7 @@ var handle117Change = (text) => {
             {trouRep === true &&
                     <FormInput
                     placeholder="Preciser"
-                    onChange={handle107Change}
+                    onChangeText={handle107Change}
                   />}
                   <div class="row mx-4">
                 <Text style={tailwind('text-lg p-2 text-Indigo-700')}>troubles de rythme</Text>
@@ -570,24 +571,24 @@ var handle117Change = (text) => {
             {trouRyt === true &&
                     <FormInput
                     placeholder="Preciser"
-                    onChange={handle108Change}
+                    onChangeText={handle108Change}
                   />}
 
 <Text style={tailwind('p-2 text-blue-400 text-2xl')}>4eme Palier(2min):</Text>
             <div class="row">
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>Charge (w)</Text>
-            <NumericInput mobile className="form-control" min={0} max={400} onChange={handle41Change} />
+            <FormInput4 className="form-control" min={0} max={400} onChange={handle41Change} />
             </label>   
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>PAS (mmhg)</Text>
-            <NumericInput mobile className="form-control" min={1} max={30} onChange={handle42Change} />
+            <FormInput4 className="form-control" min={1} max={30} onChange={handle42Change} />
             </label>
             </div>
             <div class="row">
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>PAD (mmhg)</Text>
-            <NumericInput mobile className="form-control" min={1} max={20} onChange={handle43Change} />
+            <FormInput4 className="form-control" min={1} max={20} onChange={handle43Change} />
             </label>   
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>FC (% de la FMT)</Text>
-            <NumericInput mobile className="form-control" min={10} max={120} onChange={handle44Change} />
+            <FormInput4 className="form-control" min={10} max={120} onChange={handle44Change} />
             </label>
             </div>
             <div class="row">
@@ -598,7 +599,7 @@ var handle117Change = (text) => {
             {trouCon === true &&
                     <FormInput
                     placeholder="Preciser"
-                    onChange={handle109Change}
+                    onChangeText={handle109Change}
                   />}
             <div class="row mx-4">
                 <Text style={tailwind('text-lg p-2 text-Indigo-700')}>troubles de répolarisation</Text>
@@ -610,7 +611,7 @@ var handle117Change = (text) => {
             {trouRep === true &&
                     <FormInput
                     placeholder="Preciser"
-                    onChange={handle110Change}
+                    onChangeText={handle110Change}
                   />}
             <div class="row mx-4">
                 <Text style={tailwind('text-lg p-2 text-Indigo-700')}>troubles de rythme</Text>
@@ -620,24 +621,24 @@ var handle117Change = (text) => {
             {trouRyt === true &&
                     <FormInput
                     placeholder="Preciser"
-                    onChange={handle111Change}
+                    onChangeText={handle111Change}
                   />}
 
 <Text style={tailwind('p-2 text-blue-400 text-2xl')}>5eme Palier(2min):</Text>
             <div class="row">
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>Charge (w)</Text>
-            <NumericInput mobile className="form-control" min={0} max={400} onChange={handle51Change} />
+            <FormInput4 className="form-control" min={0} max={400} onChange={handle51Change} />
             </label>   
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>PAS (mmhg)</Text>
-            <NumericInput mobile className="form-control" min={1} max={30} onChange={handle52Change} />
+            <FormInput4 className="form-control" min={1} max={30} onChange={handle52Change} />
             </label>
             </div>
             <div class="row">
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>PAD (mmhg)</Text>
-            <NumericInput mobile className="form-control" min={1} max={20} onChange={handle53Change} />
+            <FormInput4 className="form-control" min={1} max={20} onChange={handle53Change} />
             </label>   
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>FC (% de la FMT)</Text>
-            <NumericInput mobile className="form-control" min={10} max={120} onChange={handle54Change} />
+            <FormInput4 className="form-control" min={10} max={120} onChange={handle54Change} />
             </label>
             </div>
             <div class="row">
@@ -648,7 +649,7 @@ var handle117Change = (text) => {
             {trouCon === true &&
                     <FormInput
                     placeholder="Preciser"
-                    onChange={handle112Change}
+                    onChangeText={handle112Change}
                   />}
             <div class="row mx-4">
                 <Text style={tailwind('text-lg p-2 text-Indigo-700')}>troubles de répolarisation</Text>
@@ -660,7 +661,7 @@ var handle117Change = (text) => {
             {trouRep === true &&
                     <FormInput
                     placeholder="Preciser"
-                    onChange={handle113Change}
+                    onChangeText={handle113Change}
                   />}
             <div class="row mx-4">
                 <Text style={tailwind('text-lg p-2 text-Indigo-700')}>troubles de rythme</Text>
@@ -670,7 +671,7 @@ var handle117Change = (text) => {
             {trouRyt === true &&
                     <FormInput
                     placeholder="Preciser"
-                    onChange={handle114Change}
+                    onChangeText={handle114Change}
                   />}
             
 
@@ -678,15 +679,15 @@ var handle117Change = (text) => {
 <Text style={tailwind('p-2 text-blue-400 text-2xl')}>Récupération:</Text>
             <div class="row">  
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>PAS (mmhg)</Text>
-            <NumericInput mobile className="form-control" min={1} max={30} onChange={handle62Change} />
+            <FormInput4 className="form-control" min={1} max={30} onChange={handle62Change} />
             </label>
             </div>
             <div class="row">
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>PAD (mmhg)</Text>
-            <NumericInput mobile className="form-control" min={1} max={20} onChange={handle63Change} />
+            <FormInput4 className="form-control" min={1} max={20} onChange={handle63Change} />
             </label>   
             <label><Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>FC (% de la FMT)</Text>
-            <NumericInput mobile className="form-control" min={10} max={120} onChange={handle64Change} />
+            <FormInput4 className="form-control" min={10} max={120} onChange={handle64Change} />
             </label>
             </div>
             <div class="row">
@@ -697,7 +698,7 @@ var handle117Change = (text) => {
             {trouCon === true &&
                     <FormInput
                     placeholder="Preciser"
-                    onChange={handle115Change}
+                    onChangeText={handle115Change}
                   />}
             <div class="row mx-4">
                 <Text style={tailwind('text-lg p-2 text-Indigo-700')}>troubles de répolarisation</Text>
@@ -709,7 +710,7 @@ var handle117Change = (text) => {
             {trouRep === true &&
                     <FormInput
                     placeholder="Preciser"
-                    onChange={handle116Change}
+                    onChangeText={handle116Change}
                   />}
             <div class="row mx-4">
                 <Text style={tailwind('text-lg p-2 text-Indigo-700')}>troubles de rythme</Text>
@@ -719,7 +720,7 @@ var handle117Change = (text) => {
             {trouRyt === true &&
                     <FormInput
                     placeholder="Preciser"
-                    onChange={handle117Change}
+                    onChangeText={handle117Change}
                   />}
                 <View style={styles.row}>
                     <FormButton title={t("Précédent")} onPress={() => { props.navigation.navigate("PatientDetails") }} />

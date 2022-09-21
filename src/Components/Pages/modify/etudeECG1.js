@@ -12,6 +12,8 @@ import '../home.css';
 import Steps from "../../Form/Steps";
 import FormInput3 from "../../Form/FormInput3";
 import { useTranslation } from "react-i18next";
+import FormInput4 from '../../Form/FormInput4';
+
 import InputRd from '../../Form/inputrd';
 import "../Tran/i18nextInit";
 import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody,  MDBBtn, MDBIcon, MDBModalFooter } from 'mdbreact';
@@ -181,17 +183,17 @@ const EtudeECG = (props) => {
             
                     
                     <Text style={tailwind(' p-2 text-indigo-700 text-2xl')}>Fréquence cardiaque (FC):</Text>
-                    <FormInput
+                    <FormInput3
                     placeholder={t("La fréquence en battements par minute")}
                     onChangeText={handle5Change}
                      />
                      <Text style={tailwind(' p-2 text-indigo-700 text-2xl')}>Analyse de l’onde P en D 2:</Text>
-                      <FormInput
+                      <FormInput3
                       type="number"
                     placeholder={t("Durée de l’onde P(ms)")}
                     onChangeText={handle6Change}
                      />
-                      <FormInput
+                      <FormInput3
                       type="number"
                     placeholder={t("Amplitude de l’onde P(mv)")}
                     onChangeText={handle7Change}
@@ -271,7 +273,7 @@ const EtudeECG = (props) => {
                     </div>
 
                     <Text style={tailwind(' p-2 text-indigo-700 text-2xl')}>Intervalle PR:</Text>
-                      <FormInput
+                      <FormInput3
                       type="number"
                     placeholder={t("PR mesuré")}
                     onChangeText={handle21Change}

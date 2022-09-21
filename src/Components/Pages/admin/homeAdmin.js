@@ -53,8 +53,8 @@ const HomeAdmin = (props) => {
           
           <form>
           <View style={tailwind(' items-center ')} >
-        <Text style={tailwind('text-gray-700 font-bold py-2 text-9xl')}>Plate-forme Association Coeur ,</Text>
-        <Text style={tailwind('text-gray-700 font-bold py-2 text-9xl')}>Vaisseaux & Poumons Admin</Text>
+        <Text style={tailwind('text-gray-700 font-bold py-2 text-9xl')}>Plate-forme Association Coeur,</Text>
+        <Text style={tailwind('text-gray-700 font-bold py-2 text-9xl')}>Vaisseaux & Poumons Admin </Text>
         </View>
         <FormButton2 title="Patient" onPress={() => props.navigation.navigate("Patient")} />
         {/* <FormButton2 title="Patient1" onPress={() => props.navigation.navigate("Patient1")} /> */}

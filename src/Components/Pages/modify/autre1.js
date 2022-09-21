@@ -13,6 +13,8 @@ import Steps from "../../Form/Steps";
 import InputRd from '../../Form/inputrd';
 import { useTranslation } from "react-i18next";
 import "../Tran/i18nextInit";
+import FormInput4 from '../../Form/FormInput4';
+
 import NumericInput from 'react-numeric-input';
 import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody,  MDBBtn, MDBIcon, MDBModalFooter } from 'mdbreact';
 let config = {
@@ -83,13 +85,13 @@ const Autre = (props) => {
             <Text style={tailwind('text-gray-700 font-bold text-xl text-center')}>Epreuve d'effort</Text>
             <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("")}</Text>
             <label><h3>Durée de l’EE (min)</h3>
-            <NumericInput mobile className="form-control" min={1} max={60} onChange={handleChange} />
+            <FormInput4 className="form-control" min={1} max={60} onChange={handleChange} />
             </label>
             <label><h3>FC a l'arrêt de l’EE : -FC (%)</h3>
-            <NumericInput mobile className="form-control" min={10} max={120} onChange={handle1Change} />
+            <FormInput4 className="form-control" min={10} max={120} onChange={handle1Change} />
             </label>
             <label><h3>Numero du palier a l'arret de l'effort</h3>
-            <NumericInput mobile className="form-control" min={1} max={10} onChange={handle2Change} />
+            <FormInput4 className="form-control" min={1} max={10} onChange={handle2Change} />
             </label>
             <Text style={tailwind('text-lg p-2 text-gray-700')}>Motif d’arrêt :</Text>
             <div  >
@@ -104,7 +106,7 @@ const Autre = (props) => {
                 </div  >
             </div>
             <label><h3>Conclusion</h3>
-            <FormInput/>
+            <FormInput onChangeText={handle4Change} />
             </label>
                 <View style={styles.row}>
                     <FormButton title={t("Précédent")} onPress={() => { props.navigation.navigate("PatientDetails") }} />
