@@ -181,19 +181,19 @@ const EtudeECG = (props) => {
             
                     
                     <Text style={tailwind(' p-2 text-indigo-700 text-2xl')}>Fréquence cardiaque (FC):</Text>
-                    <FormInput
+                    <FormInput3
                     placeholder={t("La fréquence en battements par minute")}
                     onChangeText={handle5Change}
                      />
-                     <Text style={tailwind(' p-2 text-indigo-700 text-2xl')}>Analyse de l’onde P en D 2:</Text>
-                      <FormInput
+                     <Text style={tailwind(' p-2 text-indigo-700 text-2xl')}>Analyse de l'onde Pen D 2:</Text>
+                      <FormInput3
                       type="number"
-                    placeholder={t("Durée de l’onde P(ms)")}
+                    placeholder={t("Durée de l'onde P(ms)")}
                     onChangeText={handle6Change}
                      />
-                      <FormInput
+                      <FormInput3
                       type="number"
-                    placeholder={t("Amplitude de l’onde P(mv)")}
+                    placeholder={t("Amplitude de l'onde P(mv)")}
                     onChangeText={handle7Change}
                      />
                      <div class="row mx-4" >
@@ -271,7 +271,7 @@ const EtudeECG = (props) => {
                     </div>
 
                     <Text style={tailwind(' p-2 text-indigo-700 text-2xl')}>Intervalle PR:</Text>
-                      <FormInput
+                      <FormInput3
                       type="number"
                     placeholder={t("PR mesuré")}
                     onChangeText={handle21Change}

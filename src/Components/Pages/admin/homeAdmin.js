@@ -6,6 +6,7 @@ import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody,  MDBBtn, MDBIcon, M
 import * as actions from "../../../Actions/medicalService";
 import { connect } from "react-redux";
 import { View, Text, StyleSheet } from 'react-native';
+import { AsyncStorage } from 'AsyncStorage';
 
 import '../home.css';
 const HomeAdmin = (props) => {
@@ -14,7 +15,15 @@ const HomeAdmin = (props) => {
   }, [])
   const [toggleCheckBox, setToggleCheckBox] = useState(false)
 
+  const logout = (e) => {
 
+
+    props.logout1();
+    AsyncStorage.setItem("loggedUserAdmin", JSON.stringify(null))
+    props.navigation.navigate("Admin")
+
+
+  }
 
 
 
@@ -44,17 +53,16 @@ const HomeAdmin = (props) => {
           
           <form>
           <View style={tailwind(' items-center ')} >
-        <Text style={tailwind('text-gray-700 font-bold py-2 text-9xl')}>Bienvenue a </Text>
-        <Text style={tailwind('text-gray-700 font-bold py-2 text-9xl')}>Plate-forme SARS-COV2</Text>
-        <Text style={tailwind('text-gray-700 font-bold py-2 text-9xl')}>et autre maladie infectieuse Admin</Text>
+        <Text style={tailwind('text-gray-700 font-bold py-2 text-9xl')}>Plate-forme Association Coeur ,</Text>
+        <Text style={tailwind('text-gray-700 font-bold py-2 text-9xl')}>Vaisseaux & Poumons Admin</Text>
         </View>
         <FormButton2 title="Patient" onPress={() => props.navigation.navigate("Patient")} />
-        <FormButton2 title="Patient1" onPress={() => props.navigation.navigate("Patient1")} />
-          <FormButton2 title=" File patient " onPress={() => props.navigation.navigate("FilePatient")} />
+        {/* <FormButton2 title="Patient1" onPress={() => props.navigation.navigate("Patient1")} /> */}
           <FormButton2 title=" Csv patient "onPress={() => props.navigation.navigate("Csv")} />
-          <FormButton title="Retour" onPress={() => { props.navigation.navigate("Open") }} />
           </form>
-           
+          <div class="d-flex justify-content-center mt-35 log_container">
+        <button type="button"  class="btn log_btn" onClick={logout}>Deconnexion</button>
+        </div>  
 
           </MDBCard>
         </MDBCol>
@@ -80,7 +88,9 @@ const mystyle = {
     });
     const mapActionToProps = {
       loginAdmin: actions.loginAdmin,
-      all: actions.allPatient
+      all: actions.allPatient,
+      logout1: actions.logout1
+
     };
 
 export default  connect(mapStateToProps, mapActionToProps)(HomeAdmin);

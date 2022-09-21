@@ -10,6 +10,7 @@ import Container from '@material-ui/core/Container';
 import ParticlesBg from "particles-bg";
 import '../home.css';
 import Steps from "../../Form/Steps";
+import FormInput4 from '../../Form/FormInput4';
 import FormInput3 from "../../Form/FormInput3";
 import { useTranslation } from "react-i18next";
 import "../Tran/i18nextInit";
@@ -52,29 +53,29 @@ const ExamenClinique = (props) => {
     const [poul, setPoul] = useState(false)
     const [precisePoul, setPrecisePoul] = useState()
     const [peripherique, setPeripherique] = useState(false)
-    const [varices , setVarices ] = useState(false)
-    const [fc, setFc ] = useState()
-    const [rythme, setRythme ] = useState()
-    const [siege, setSiege ] = useState()
-    const [reflux, setReflux ] = useState()
-    const [siege2, setSiege2 ] = useState()
+    const [varices, setVarices] = useState(false)
+    const [fc, setFc] = useState()
+    const [rythme, setRythme] = useState()
+    const [siege, setSiege] = useState()
+    const [reflux, setReflux] = useState()
+    const [siege2, setSiege2] = useState()
     var handle17Change = (data) => {
       if (data.target.value==="Oui")
-      setReflux (true)
+      setReflux(true)
       if (data.target.value==="Non")
-      setReflux (false)
+      setReflux(false)
     }
     var handle14Change = (text) => {
       setFc(text)
     }
     var handle15Change = (text) => {
-      setRythme (text.target.value)
+      setRythme(text.target.value)
     }
     var handle16Change = (text) => {
-      setSiege (text)
+      setSiege(text)
     }
     var handle18Change = (text) => {
-      setSiege2 (text)
+      setSiege2(text)
     }
     var handle10Change = (text) => {
       setPas(text)
@@ -144,9 +145,9 @@ const ExamenClinique = (props) => {
       }
       var handle29Change = (data) => {
         if (data.target.value==="Oui")
-        setVarices (true)
+        setVarices(true)
         if (data.target.value==="Non")
-        setVarices (false)
+        setVarices(false)
       }
 
 
@@ -167,7 +168,7 @@ const ExamenClinique = (props) => {
             poul:poul,
             precisePoul:precisePoul,
             peripherique:peripherique,
-            varices :varices ,
+            varices:varices,
             fc:fc,
             rythme:rythme,
             siege:siege,
@@ -190,49 +191,45 @@ const ExamenClinique = (props) => {
           <MDBCard>
             <View style={tailwind(' items-center ')} >
             <Text style={tailwind('text-gray-700 font-bold text-xl text-center')}>{t("Examen clinique")}</Text>
-        <FormInput3
-          mask="999"
-          placeholder={t("Le poids(Kg)")}
-          onChange={handle1Change}
-        />
-        <FormInput3
-          mask="9999"
-          placeholder={t("La taille (cm)")}
-          onChange={handle2Change}
-        />
+       
+            <div><label><Text style={tailwind('text-lg p-2 text-gray-700')}>Le poids(Kg)</Text>
+            <FormInput4 className="form-control" min={0} max={500}  onChange={handle1Change}/></label></div>
+            <div><label><Text style={tailwind('text-lg p-2 text-gray-700')}>La taille (cm)</Text>
+            <FormInput4  className="form-control" min={0} max={10000}  onChange={handle2Change}/></label></div>
+         
         <Text style={tailwind('text-lg p-2 text-gray-700')}>BMI: {poids/Math.pow(taille/100, 2)}</Text>
         <Text style={tailwind('text-lg p-2 text-gray-700')}>Le calcul de la surface corporelle (SC): {0.0003207*Math.pow((1000*poids),(0.7285-(0.0188*Math.log10(poids*1000))))*Math.pow(taille, 0.3)}</Text>
-        <Text style={tailwind('text-lg p-2 text-Indigo-700')}>TA aux deux bras après 5 min de repos :</Text>
+        <Text style={tailwind('text-lg p-2 text-Indigo-700')}>TA aux deux bras après 5 min de repos:</Text>
             <div class="row">
             <label><Text style={tailwind('text-lg p-2 text-gray-700')}>PAS</Text>
-            <NumericInput mobile className="form-control" min={30} max={400}  onChange={handle10Change}/>
+            <FormInput4  className="form-control" min={30} max={400}  onChange={handle10Change}/>
             </label>
             <label><Text style={tailwind('text-lg p-2 text-gray-700')}>PAD</Text>
-            <NumericInput mobile className="form-control" min={0} max={1000} onChange={handle11Change} />
+            <FormInput4  className="form-control" min={0} max={1000} onChange={handle11Change} />
             </label>
             </div>
             <div class="row">
             <label><Text style={tailwind('text-lg p-2 text-gray-700')}>PAS</Text>
-            <NumericInput mobile className="form-control" min={30} max={400}onChange={handle12Change}  />
+            <FormInput4  className="form-control" min={30} max={400}onChange={handle12Change}  />
             </label>
             <label><Text style={tailwind('text-lg p-2 text-gray-700')}>PAD</Text>
-            <NumericInput mobile className="form-control" min={0} max={1000}onChange={handle13Change}  />
+            <FormInput4  className="form-control" min={0} max={1000}onChange={handle13Change}  />
             </label>
             </div>
             <FormInput3
           placeholder="FC (bpm)"
-          onChange={handle14Change}
+          onChangeText={handle14Change}
         />
           <View style={styles.row}>
             <div class="row mx-4">
-              <Text style={tailwind('text-lg p-2 text-Indigo-700')}>{t("")}Rythme  :</Text>
+              <Text style={tailwind('text-lg p-2 text-Indigo-700')}>{t("")}Rythme :</Text>
               <InputRd id="1" name1="régulier"  type="radio" value="régulier" name="gender1"onChange={handle15Change} /> 
               <InputRd id="2" name1="irrégulier"  type="radio" value="irrégulier" name="gender1"onChange={handle15Change} /> 
               </div>
           </View>
           <View style={styles.row}>
             <div class="row mx-4">
-              <Text style={tailwind('text-lg p-2 text-Indigo-700')}>{t("")}Bruits du cœur  :</Text>
+              <Text style={tailwind('text-lg p-2 text-Indigo-700')}>{t("")}Bruits du cœur :</Text>
               <InputRd id="3" name1="normaux"  type="radio" value="régulier" name="gender2"onChange={handle4Change} /> 
               <InputRd id="4" name1="anormaux"  type="radio" value="anormaux" name="gender2"onChange={handle4Change} /> 
               </div>
@@ -260,7 +257,7 @@ const ExamenClinique = (props) => {
           </View>
           {souf === true &&
             <FormInput
-            placeholder="préciser "
+            placeholder="préciser"
             onChangeText={handle7Change}
             />}
             <View style={styles.row}>
@@ -273,7 +270,7 @@ const ExamenClinique = (props) => {
           {peripherique === true &&
             <FormInput
             placeholder="siége"
-            onChange={handle16Change}
+            onChangeText={handle16Change}
             />}
           <View style={styles.row}>
             <div class="row mx-4">
@@ -291,20 +288,20 @@ const ExamenClinique = (props) => {
           </View>
           {poul === false &&
             <FormInput
-            placeholder="préciser "
+            placeholder="préciser"
             onChangeText={handle9Change}
             />}
           <View style={styles.row}>
             <div class="row mx-4">
-              <Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>Varices   :</Text>
+              <Text style={tailwind('text-lg p-2 text-Indigo-700 ')}>Varices  :</Text>
               <InputRd id="17" name1="Non"  type="radio" value="Non" name="gender8" onChange={handle29Change}/> 
               <InputRd id="18" name1="Oui"  type="radio" value="Oui" name="gender8" onChange={handle29Change}/> 
             </div>
           </View>
-          {varices  === true &&
+          {varices === true &&
             <FormInput
             placeholder="siége"
-            onChange={handle18Change}
+            onChangeText={handle18Change}
             />}
 
 

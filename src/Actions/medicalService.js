@@ -3,6 +3,7 @@ import apiMedicalService from "./apiMedicalService";
 export const ACTION_TYPES = {
   LOGIN: "LOGIN",
   LOGOUT: "LOGOUT",
+  LOGOUT1: "LOGOUT1",
   LOGINADMIN: "LOGINADMIN",
   ALL_PATIENT:"ALL_PATIENT",
   ADD_PATIENT: "ADD_PATIENT",
@@ -68,9 +69,21 @@ export const login = (values) => (dispatch) => {
 export const logout = () => (dispatch) => {
   apiMedicalService.medicalService().logout().
     then((response) => {
-      localStorage.setItem("loggedUser", JSON.stringify("Try to login"))
+      localStorage.setItem("loggedUserAdmin", JSON.stringify("Try to login"))
       dispatch({
         type: ACTION_TYPES.LOGOUT,
+        payload: JSON.stringify(null)
+      });
+
+    })
+    .catch((err) => console.log(err));
+};
+export const logout1 = () => (dispatch) => {
+  apiMedicalService.medicalService().logout().
+    then((response) => {
+      localStorage.setItem("loggedUser", JSON.stringify("Try to login"))
+      dispatch({
+        type: ACTION_TYPES.LOGOUT1,
         payload: JSON.stringify(null)
       });
 

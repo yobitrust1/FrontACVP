@@ -80,7 +80,7 @@ const AspectSegment = (props) => {
           <MDBCol >
             <MDBCard>
             <View style={tailwind(' items-center ')} >
-            <Text style={tailwind('p-2 text-indigo-700 text-2xl')}>Aspect de Brugada en V1 et V2 : </Text>
+            <Text style={tailwind('p-2 text-indigo-700 text-2xl')}>Aspect de Brugada en V1 et V2: </Text>
             <Text style={tailwind('text-lg p-2 text-Indigo-700')}> </Text>
             <View style={styles.row}>
             <div class="row mx-4" >
@@ -96,14 +96,14 @@ const AspectSegment = (props) => {
                 <InputRd id="4" name1="type2"  type="radio" value="type3" name="gender155" onChange={handle3Change}/> 
                 <InputRd id="5" name1="type3"  type="radio" value="type3" name="gender155" onChange={handle3Change}/> 
             </div>}
-            <Text style={tailwind('p-2 text-indigo-700 text-2xl')}>Intervalle QT :</Text>
+            <Text style={tailwind('p-2 text-indigo-700 text-2xl')}>Intervalle QT:</Text>
         <FormInput3
           placeholder="QT mesuré en ms en D2 et V5:"
-          onChange={handle4Change}
+          onChangeText={handle4Change}
         />
         <FormInput3
           placeholder="QT corrigé en ms:"
-          onChange={handle5Change}
+          onChangeText={handle5Change}
         />
 
 

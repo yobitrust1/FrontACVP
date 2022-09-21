@@ -53,7 +53,6 @@ const Home = (props) => {
 					<div class="brand_logo_container"> 
           
 						<img src={add} class="brand_logo" alt="Logo"/>
-             <h1><font color="00BFBA">Bienvenue</font></h1>
 					</div>
 				</div>
         

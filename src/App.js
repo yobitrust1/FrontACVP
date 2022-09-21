@@ -50,7 +50,8 @@ import Cercle11 from "./Components/Pages/modify/cercle11";
 import Cercle21 from "./Components/Pages/modify/cercle21";
 import Cercle31 from "./Components/Pages/modify/cercle31";
 import Cercle41 from "./Components/Pages/modify/cercle41";
-import Ventricule1 from "./Components/Pages/modify/ventricule1";
+import Ventricule11 from "./Components/Pages/modify/ventricule11";
+import Ventricule12 from "./Components/Pages/modify/ventricule12";
 import Autre1 from "./Components/Pages/modify/autre1";
 import FicheIRM1 from "./Components/Pages/modify/ficheIRM1";
 import FicheEffort1 from "./Components/Pages/modify/fichieEffort1";
@@ -118,7 +119,8 @@ const App = () => {
           <Stack.Screen name="Autre1" component={Autre1} />
           <Stack.Screen name="FicheIRM1" component={FicheIRM1} />
           <Stack.Screen name="FicheEffort1" component={FicheEffort1} />
-          <Stack.Screen name="Ventricule1" component={Ventricule1} />
+          <Stack.Screen name="Ventricule11" component={Ventricule11} />
+          <Stack.Screen name="Ventricule12" component={Ventricule12} />
           <Stack.Screen name="Admin" component={Admin} />
           <Stack.Screen name="HomeAdmin" component={HomeAdmin} />
           <Stack.Screen name="FilePatient" component={FilePatient} />

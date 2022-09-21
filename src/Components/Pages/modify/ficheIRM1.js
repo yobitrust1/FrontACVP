@@ -14,6 +14,7 @@ import FormInput3 from "../../Form/FormInput3";
 import { useTranslation } from "react-i18next";
 import "../Tran/i18nextInit";
 import NumericInput from 'react-numeric-input';
+import InputRd from '../../Form/inputrd';
 import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody,  MDBBtn, MDBIcon, MDBModalFooter } from 'mdbreact';
 let config = {
       num: [4, 7],
@@ -64,7 +65,96 @@ const FicheIRM = (props) => {
     const [rehauTar, setRehauTar] = useState()
     const [ische, setIsche] = useState()
     const [nonische, setNonische] = useState()
+    const [test1, setTest1] = useState()
+    const [test2, setTest2] = useState()
 
+    const [siegeAkVg, setSiegeAkVg] = useState()
+    const [siegeDyVg, setSiegeDyVg] = useState()
+    const [siegeAsVg, setSiegeAsVg] = useState()
+    const [siegeHyVg, setSiegeHyVg] = useState()
+    const [siegeAkLong, setSiegeAkLong] = useState()
+    const [siegeDyLong, setSiegeDyLong] = useState()
+    const [siegeAsLong, setSiegeAsLong] = useState()
+    const [siegeHyLong, setSiegeHyLong] = useState()
+
+    const [pasPrise, setPasPrise ] = useState(false)
+    const [sousEnd, setSousEnd ] = useState(false)
+    const [transmurale, setTransmurale ] = useState(false)
+    const [sousEp, setSousEp ] = useState(false)
+    const [diffuse, setDiffuse ] = useState(false)
+    const [patchy, setPatchy ] = useState(false)
+    var handle42Change = (data) => {
+        if (data.target.value==="Oui")
+        setDiffuse (true)
+        if (data.target.value==="Non")
+        setDiffuse (false)
+      }
+      var handle43Change = (data) => {
+        if (data.target.value==="Oui")
+        setPatchy (true)
+        if (data.target.value==="Non")
+        setPatchy (false)
+      }
+    var handle39Change = (data) => {
+        if (data.target.value==="Oui")
+        setSousEnd (true)
+        if (data.target.value==="Non")
+        setSousEnd (false)
+      }
+    var handle38Change = (data) => {
+        if (data.target.value==="Oui")
+        setPasPrise (true)
+        if (data.target.value==="Non")
+        setPasPrise (false)
+      }
+      var handle40Change = (data) => {
+        if (data.target.value==="Oui")
+        setTransmurale (true)
+        if (data.target.value==="Non")
+        setTransmurale (false)
+      }
+      var handle41Change = (data) => {
+        if (data.target.value==="Oui")
+        setSousEp (true)
+        if (data.target.value==="Non")
+        setSousEp (false)
+      }
+    var handle30Change = (text) => {
+        setSiegeAkVg(text)
+    }
+    var handle31Change = (text) => {
+        setSiegeDyVg(text)
+    }
+    var handle32Change = (text) => {
+        setSiegeAsVg(text)
+    }
+    var handle33Change = (text) => {
+        setSiegeHyVg(text)
+    }
+    var handle34Change = (text) => {
+        setSiegeAkLong(text)
+    }
+    var handle35Change = (text) => {
+        setSiegeDyLong(text)
+    }
+    var handle36Change = (text) => {
+        setSiegeAsLong(text)
+    }
+    var handle37Change = (text) => {
+        setSiegeHyLong(text)
+    }
+    var handle71Change = (data) => {
+        if (data.target.value==="Oui")
+        setTest1(true)
+      if (data.target.value==="Non")
+      setTest1(false)
+    }
+    var handle72Change = (data) => {
+        if (data.target.value==="Oui")
+        setTest2(true)
+      if (data.target.value==="Non")
+      setTest2(false)
+    }
     var handleChange = (text) => {
         setMasseMyo(text)
     }
@@ -191,8 +281,23 @@ const FicheIRM = (props) => {
             longaxe:longaxe,
             rehauTar:rehauTar,
             ische:ische,
-            nonische:nonische
-            
+            nonische:nonische,
+            test1:test1,
+            test2:test2,
+            siegeAkVg:siegeAkVg,
+            siegeDyVg:siegeDyVg,
+            siegeAsVg:siegeAsVg,
+            siegeHyVg:siegeHyVg,
+            siegeAkLong:siegeAkLong,
+            siegeDyLong:siegeDyLong,
+            siegeAsLong:siegeAsLong,
+            siegeHyLong:siegeHyLong,
+            pasPrise:pasPrise,
+            sousEnd:sousEnd,
+            transmurale:transmurale,
+            sousEp:sousEp,
+            diffuse:diffuse,
+            patchy:patchy,
         }
         console.log(values)
         e.preventDefault();
@@ -201,7 +306,7 @@ const FicheIRM = (props) => {
     }
 
     return (
-        <section className="landing-background">
+        <section className="landing-background109">
         <div class="row">
   <div class=" d-flex  m-4 col-md-6  " >
   <MDBContainer   >
@@ -211,21 +316,19 @@ const FicheIRM = (props) => {
             <View style={tailwind(' items-center ')} >
             <Text style={tailwind('text-gray-700 font-bold text-xl text-center')}>IRM cardiaque</Text>
             <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("")}</Text>
-            <h3>Étude en mode ciné :</h3>
-            <div class="row">
-            <label><h3>Masse myocardique(g/m²)</h3>
+            
+            <label><h3 class="text-primary">Masse myocardique(g/m²)</h3>
             <NumericInput mobile className="form-control" min={30} max={400} onChange={handleChange} />
             </label>
-            <label><h3>Diamètre de l’oreillette gauche</h3>
+            <label><h3 class="text-primary">Diamètre de l’oreillette gauche(mm)</h3>
             <NumericInput mobile className="form-control" min={5} max={80}  onChange={handle5Change}/>
             </label>
-            </div>
             <div class="row">
-            <label><h3>Diamètre de l’oreillette droite</h3>
+            <label><h3 class="text-primary">Diamètre de l’oreillette droite(mm)</h3>
             <NumericInput mobile className="form-control" min={5} max={80}  onChange={handle6Change}/>
             </label>
             </div>
-            <h3>SÉQUENCES CINE SSFP COUVRANT L’ENSEMBLE DU VG (LONG AXE):</h3>
+            <h3 class="text-primary">Etude de ventricule gauche :</h3>
             <div class="row">
             <label><h3>FE (%)</h3>
             <NumericInput mobile className="form-control" min={1} max={100} onChange={handle7Change} />
@@ -264,77 +367,163 @@ const FicheIRM = (props) => {
             </label>
             </div>
             <h3>CINETIQUE SEGMENTAIRE VG :</h3>
-            <div  >
-                <input onChange={handle16Change} type="radio" value="Akinésie" name="gender" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>Akinésie</Text>
-                <input onChange={handle16Change} type="radio" value="Dyskinésie" name="gender" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>Dyskinésie</Text>
-                <input onChange={handle16Change} type="radio" value="Asynchronisme" name="gender" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>Asynchronisme</Text>
+            <div class="row mx-4">
+                <InputRd id="1" name1="Akinésie" onChange={handle16Change} type="radio" value="Akinésie" name="gender" /> 
+                <InputRd id="2" name1="Dyskinésie" onChange={handle16Change} type="radio" value="Dyskinésie" name="gender" /> 
+                <InputRd id="3" name1="Asynchronisme" onChange={handle16Change} type="radio" value="Asynchronisme" name="gender" /> 
             </div>
-            <h3>SÉQUENCES CINE SSFP COUVRANT L’ENSEMBLE DU VD :</h3>
+            <div class="row mx-4">
+                <InputRd id="4" name1="Hypokinésie" onChange={handle16Change} type="radio" value="Hypokinésie" name="gender" /> 
+                <InputRd id="5" name1="Homogène" onChange={handle16Change} type="radio" value="Homogène" name="gender" /> 
+            </div>
+            {vg === "Akinésie" &&
+                    <FormInput
+                    placeholder="Precise le siège"
+                    onChange={handle30Change}
+                  />}
+                  {vg === "Dyskinésie" &&
+                    <FormInput
+                    placeholder="Precise le siège"
+                    onChange={handle31Change}
+                  />}
+                  {vg === "Asynchronisme" &&
+                    <FormInput
+                    placeholder="Precise le siège"
+                    onChange={handle32Change}
+                  />}
+                  {vg === "Hypokinésie" &&
+                    <FormInput
+                    placeholder="Precise le siège"
+                    onChange={handle33Change}
+                  />}
+                  
+            <h3 class="text-primary">Etude de ventricule droite :</h3>
             <div class="row">
             <label><h3>FE (%)</h3>
             <NumericInput mobile className="form-control" min={1} max={100} onChange={handle17Change} />
             </label>
-            <label><h3>VTD</h3>
+            <label><h3>VTD(ml)</h3>
             <NumericInput mobile className="form-control" min={10} max={400}  onChange={handle18Change}/>
             </label>
             </div>
             <div class="row">
-            <label><h3>VTD indexé</h3>
+            <label><h3>VTD indexé (ml/m²)</h3>
             <NumericInput mobile className="form-control" min={10} max={100} onChange={handle19Change} />
             </label>
-            <label><h3>VTS</h3>
+            <label><h3>VTS (ml)</h3>
             <NumericInput mobile className="form-control" min={10} max={100}  onChange={handle20Change}/>
             </label>
             </div>
             <div class="row">
-            <label><h3>VTS indexé</h3>
+            <label><h3>VTS indexé (ml/m²)</h3>
             <NumericInput mobile className="form-control" min={10} max={400} onChange={handle21Change} />
             </label>
-            <label><h3>VES</h3>
+            <label><h3>VES (ml)</h3>
             <NumericInput mobile className="form-control" min={10} max={400}  onChange={handle22Change}/>
             </label>
             </div>
             <div class="row">
-            <label><h3>VES indexé</h3>
+            <label><h3>VES indexé (ml/m²)</h3>
             <NumericInput mobile className="form-control" min={10} max={400} onChange={handle23Change} />
             </label>
-            <label><h3>Débit cardiaque</h3>
+            <label><h3>Débit cardiaque (ml)</h3>
             <NumericInput mobile className="form-control" min={0} max={40}  onChange={handle24Change}/>
             </label>
             </div>
             <div class="row">
-            <label><h3>Débit cardiaque indexé</h3>
+            <label><h3>Débit cardiaque indexé (ml/min/m²)</h3>
             <NumericInput mobile className="form-control" min={0} max={40} onChange={handle25Change} />
             </label>
             </div>
-            <h3>CINETIQUE SEGMENTAIRE VD (LONG AXE):</h3>
-            <div  >
-                <input onChange={handle26Change} type="radio" value="Akinésie" name="gender1" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>Akinésie</Text>
-                <input onChange={handle26Change} type="radio" value="Dyskinésie" name="gender1" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>Dyskinésie</Text>
-                <input onChange={handle26Change} type="radio" value="Asynchronisme" name="gender1" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>Asynchronisme</Text>
+            <h3>CINETIQUE SEGMENTAIRE VD :</h3>
+            <div class="row mx-4">
+                <InputRd id="6" name1="Akinésie" onChange={handle26Change} type="radio" value="Akinésie" name="gender1" /> 
+                <InputRd id="7" name1="Dyskinésie" onChange={handle26Change} type="radio" value="Dyskinésie" name="gender1" /> 
+                <InputRd id="8" name1="Asynchronisme" onChange={handle26Change} type="radio" value="Asynchronisme" name="gender1" /> 
             </div>
-            <h3>Étude injectée (Gadolinium) :</h3>
-            <div  >
+            <div class="row mx-4">
+                <InputRd id="9" name1="Hypokinésie" onChange={handle26Change} type="radio" value="Hypokinésie" name="gender1" /> 
+                <InputRd id="10" name1="Homogène" onChange={handle26Change} type="radio" value="Homogène" name="gender1" /> 
+            </div>
+            {longaxe === "Akinésie" &&
+                    <FormInput
+                    placeholder="Precise le siège"
+                    onChange={handle34Change}
+                  />}
+                  {longaxe === "Dyskinésie" &&
+                    <FormInput
+                    placeholder="Precise le siège"
+                    onChange={handle35Change}
+                  />}
+                  {longaxe === "Asynchronisme" &&
+                    <FormInput
+                    placeholder="Precise le siège"
+                    onChange={handle36Change}
+                  />}
+                  {longaxe === "Hypokinésie" &&
+                    <FormInput
+                    placeholder="Precise le siège"
+                    onChange={handle37Change}
+                  />}
+            <h3 class="text-primary">Étude injectée (Gadolinium) :</h3>
+            <div class="row mx-4">
                 <Text style={tailwind('text-lg p-2 text-gray-700')}>Rehaussement tardif à 5-10 min</Text>
-                <input onChange={handle27Change} type="radio" value="Non" name="gender2" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Non")}</Text>
-                <input onChange={handle27Change} type="radio" value="Oui" name="gender2" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Oui")}</Text>
+                <InputRd id="11" name1="Non" onChange={handle27Change} type="radio" value="Non" name="gender772" /> 
+                <InputRd id="12" name1="Oui" onChange={handle27Change} type="radio" value="Oui" name="gender772" /> 
             </div>
-            <div  >
-                <Text style={tailwind('text-lg p-2 text-gray-700')}>Ischémique</Text>
-                <input onChange={handle28Change} type="radio" value="Sous endocardique ou transmurale" name="gender3" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>Sous endocardique ou transmurale</Text>
-                <input onChange={handle28Change} type="radio" value="Topographie segmentaire vasculaire" name="gender3" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>Topographie segmentaire vasculaire</Text>
+            {rehauTar === true &&
+            <div>
+                <div class="row mx-4">
+            <Text style={tailwind('text-lg p-2 text-Indigo-700')}>- pas de prise de contraste :</Text>
+            <InputRd id="13" name1="Non"  type="radio" value="Non" name="gender773" /> 
+            <InputRd id="14" name1="Oui"  type="radio" value="Oui" name="gender773" /> 
+        </div>
+                <div class="row mx-4">
+            <Text style={tailwind('text-lg p-2 text-Indigo-700')}>- Prise de type ischémique :</Text>
+            <InputRd id="15" name1="Non" onChange={handle71Change} type="radio" value="Non" name="gender773"onChange={handle38Change} /> 
+            <InputRd id="16" name1="Oui" onChange={handle71Change} type="radio" value="Oui" name="gender773" onChange={handle38Change}/> 
+        </div>
+        {test1 === true &&
+                    <div class="row mx-4"><div class="row mx-4">
+                    <Text style={tailwind('text-lg p-2 text-Indigo-700')}>sous endocardique :</Text>
+                    <InputRd id="17" name1="Non"  type="radio" value="Non" name="gender7773"onChange={handle39Change} /> 
+                    <InputRd id="18" name1="Oui"  type="radio" value="Oui" name="gender7773"onChange={handle39Change} /> 
+                </div>
+                <div class="row mx-4">
+                <Text style={tailwind('text-lg p-2 text-Indigo-700')}>transmurale :</Text>
+                <InputRd id="19" name1="Non"  type="radio" value="Non" name="gender7773"onChange={handle40Change} /> 
+                <InputRd id="20" name1="Oui"  type="radio" value="Oui" name="gender7773"onChange={handle40Change} /> 
+            </div></div>}
+        <div class="row mx-4">
+                <Text style={tailwind('text-lg p-2 text-Indigo-700')}>- Prise non ischémique :</Text>
+                <InputRd id="21" name1="Non" onChange={handle72Change} type="radio" value="Non" name="gender774" /> 
+                <InputRd id="22" name1="Oui" onChange={handle72Change} type="radio" value="Oui" name="gender774" /> 
             </div>
-            <div  >
-                <Text style={tailwind('text-lg p-2 text-gray-700')}>Non ischémique</Text>
-                <input onChange={handle29Change} type="radio" value="Patchy" name="gender4" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>Patchy</Text>
-                <input onChange={handle29Change} type="radio" value="Sous épicardique" name="gender4" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>Sous épicardique</Text>
-                <input onChange={handle29Change} type="radio" value="Diffuse" name="gender4" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>Diffuse</Text>
-            </div>
+            {test2 === true &&
+                    <div class="row mx-4"><div class="row mx-4">
+                    <Text style={tailwind('text-lg p-2 text-Indigo-700')}>sous epicardique :</Text>
+                    <InputRd id="23" name1="Non"  type="radio" value="Non" name="gender7773"onChange={handle41Change} /> 
+                    <InputRd id="24" name1="Oui"  type="radio" value="Oui" name="gender7773"onChange={handle41Change} /> 
+                </div>
+                <div class="row mx-4">
+                <Text style={tailwind('text-lg p-2 text-Indigo-700')}>diffuse :</Text>
+                <InputRd id="25" name1="Non"  type="radio" value="Non" name="gender7773"onChange={handle42Change} /> 
+                <InputRd id="26" name1="Oui"  type="radio" value="Oui" name="gender7773"onChange={handle42Change} /> 
+            </div><div class="row mx-4">
+                <Text style={tailwind('text-lg p-2 text-Indigo-700')}>patchy :</Text>
+                <InputRd id="27" name1="Non"  type="radio" value="Non" name="gender7773" onChange={handle43Change}/> 
+                <InputRd id="28" name1="Oui"  type="radio" value="Oui" name="gender7773" onChange={handle43Change}/> 
+            </div></div>}
+                  </div>
+            }
+            
         
 
             
-            <FormButton title={t("Annuler")} onPress={() => { props.navigation.navigate("PatientDetails") }} />
+                <View style={styles.row}>
+                    <FormButton title={t("Précédent")} onPress={() => { props.navigation.navigate("PatientDetails") }} />
                     <FormButton title={t("Enregistre")} onPress={handleSubmit} />
+                </View>
             </View>
            </MDBCard>
         </MDBCol>

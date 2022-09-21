@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import { View, Text, StyleSheet } from 'react-native';
 //import 'localstorage-polyfill';
 import FormInput from '../../Form/FormInput';
+import FormInput3 from '../../Form/FormInput3';
 import Container from '@material-ui/core/Container';
 import ParticlesBg from "particles-bg";
 import '../home.css';
@@ -228,7 +229,7 @@ const Interrogatoire = (props) => {
         <MDBCol >
           <MDBCard>
             <View style={tailwind(' items-center ')} >
-            <Text style={tailwind('text-blue-700 font-bold text-3xl text-center')}>{t("L’interrogatoire")}</Text>
+            <Text style={tailwind('text-blue-700 font-bold text-3xl text-center')}>{t("L'interrogatoire")}</Text>
             <Text style={tailwind(' p-2 text-indigo-700 text-2xl')}>{t("")}Antécédents familiaux :</Text>
                     <View style={styles.row}>
                     <div class="row mx-4" >
@@ -305,7 +306,7 @@ const Interrogatoire = (props) => {
                     </div>
                     </View>
                     {tabac === true &&
-                    <FormInput
+                    <FormInput3
                     placeholder="nombre(P/A)"
                     onChangeText={handle16Change}
                   />}
@@ -317,7 +318,7 @@ const Interrogatoire = (props) => {
                     </div>
                     </View>
                     {chicha === true &&
-                    <FormInput
+                    <FormInput3
                     placeholder="nombre(c/j)"
                     onChangeText={handle18Change}
                   />}
@@ -329,7 +330,7 @@ const Interrogatoire = (props) => {
                     </div>
                     </View>
                     {alcole === true &&
-                    <FormInput
+                    <FormInput3
                     placeholder="nombre(g/j)"
                     onChangeText={handle20Change}
                   />}
@@ -341,7 +342,7 @@ const Interrogatoire = (props) => {
                     </div>
                     </View>
                     {produit === true &&
-                    <FormInput
+                    <FormInput3
                     placeholder="nombre(g/j)"
                     onChangeText={handle30Change}
                   />}
@@ -357,7 +358,7 @@ const Interrogatoire = (props) => {
                     placeholder="Preciser"
                     onChangeText={handle31Change}
                   />}
-                    <Text style={tailwind('p-2 text-indigo-700 text-2xl')}>{t("")}La présence d’une symptomatologie cardiaque à type de : </Text>
+                    <Text style={tailwind('p-2 text-indigo-700 text-2xl')}>{t("")}La présence d’une symptomatologie cardiaque à type de: </Text>
                     <View style={styles.row}>
                     <div class="row mx-4" >
                         <Text style={tailwind('text-lg p-2 text-Indigo-700')}>{t("")}Douleur thoracique :</Text>

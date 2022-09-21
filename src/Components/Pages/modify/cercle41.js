@@ -133,7 +133,7 @@ const Cercle4 = (props) => {
     }
 
     return (
-        <section className="landing-background">
+        <section className="landing-backgroundt">
         <div class="row">
   <div class=" d-flex  m-4 col-md-6  " >
   <MDBContainer   >
@@ -141,69 +141,88 @@ const Cercle4 = (props) => {
           <MDBCol >
             <MDBCard>
             <View style={tailwind(' items-center ')} >
-            <Text style={tailwind('text-gray-700 font-bold text-xl text-center')}>{t("Epaississement relatif")}</Text>
+            <Text style={tailwind('text-gray-700 font-bold text-xl text-center')}>{t("Epaissement relatif")}</Text>
             <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("")}</Text>
-            <label><h3>v</h3>
+            <div class="row">
+            <label><h3>v1</h3>
             <NumericInput mobile className="form-control" min={0} max={100} onChange={handleChange} />
             </label>
-            <label><h3>v1</h3>
+            <label><h3>v2</h3>
             <NumericInput mobile className="form-control" min={0} max={100} onChange={handle1Change} />
             </label>
-            <label><h3>v2</h3>
+            </div>
+            <div class="row">
+            <label><h3>v3</h3>
             <NumericInput mobile className="form-control" min={0} max={100} onChange={handle2Change} />
             </label>
-            <label><h3>v3</h3>
+            <label><h3>v4</h3>
             <NumericInput mobile className="form-control" min={0} max={100} onChange={handle3Change} />
             </label>
-            <label><h3>v4</h3>
+            </div>
+            <div class="row">
+            <label><h3>v5</h3>
             <NumericInput mobile className="form-control" min={0} max={100} onChange={handle4Change} />
             </label>
-            <label><h3>v5</h3>
+            <label><h3>v6</h3>
             <NumericInput mobile className="form-control" min={0} max={100} onChange={handle5Change} />
             </label>
-            <label><h3>v6</h3>
+            </div>
+            <div class="row">
+            <label><h3>v7</h3>
             <NumericInput mobile className="form-control" min={0} max={100} onChange={handle6Change} />
             </label>
-            <label><h3>v7</h3>
+            <label><h3>v8</h3>
             <NumericInput mobile className="form-control" min={0} max={100} onChange={handle7Change} />
             </label>
-            <label><h3>v8</h3>
+            </div>
+            <div class="row">
+            <label><h3>v9</h3>
             <NumericInput mobile className="form-control" min={0} max={100} onChange={handle8Change} />
             </label>
-            <label><h3>v9</h3>
+            <label><h3>v10</h3>
             <NumericInput mobile className="form-control" min={0} max={100} onChange={handle9Change} />
             </label>
-            <label><h3>v10</h3>
+            </div>
+            <div class="row">
+            <label><h3>v11</h3>
             <NumericInput mobile className="form-control" min={0} max={100} onChange={handle10Change} />
             </label>
-            <label><h3>v11</h3>
+            <label><h3>v12</h3>
             <NumericInput mobile className="form-control" min={0} max={100} onChange={handle11Change} />
             </label>
-            <label><h3>v12</h3>
+            </div>
+            <div class="row">
+            <label><h3>v13</h3>
             <NumericInput mobile className="form-control" min={0} max={100} onChange={handle12Change} />
             </label>
-            <label><h3>v13</h3>
+            <label><h3>v14</h3>
             <NumericInput mobile className="form-control" min={0} max={100} onChange={handle13Change} />
             </label>
-            <label><h3>v14</h3>
+            </div>
+            <div class="row">
+            <label><h3>v15</h3>
             <NumericInput mobile className="form-control" min={0} max={100} onChange={handle14Change} />
             </label>
-            <label><h3>v15</h3>
+            <label><h3>v16</h3>
             <NumericInput mobile className="form-control" min={0} max={100} onChange={handle15Change} />
             </label>
-            <label><h3>v16</h3>
+            </div>
+            <div class="row">
+            <label><h3>v17</h3>
             <NumericInput mobile className="form-control" min={0} max={100} onChange={handle16Change} />
             </label>
-
-            <FormButton title={t("Annuler")} onPress={() => { props.navigation.navigate("PatientDetails") }} />
+            </div>
+                <View style={styles.row}>
+                    <FormButton title={t("Précédent")} onPress={() => { props.navigation.navigate("PatientDetails") }} />
                     <FormButton title={t("Enregistre")} onPress={handleSubmit} />
+                </View>
             </View>
            </MDBCard>
         </MDBCol>
       </MDBRow>
     </MDBContainer>
     </div>
-    <Steps current={5} class="col-md-6"/>  
+    <Steps current={5}  class="col-md-6"/>
     </div>
 
     </section>    );

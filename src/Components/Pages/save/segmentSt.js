@@ -5,12 +5,10 @@ import * as actions from "../../../Actions/medicalService";
 import { connect } from "react-redux";
 import { View, Text, StyleSheet } from 'react-native';
 //import 'localstorage-polyfill';
-import FormInput from '../../Form/FormInput';
 import Container from '@material-ui/core/Container';
 import ParticlesBg from "particles-bg";
 import '../home.css';
 import Steps from "../../Form/Steps";
-import FormInput3 from "../../Form/FormInput3";
 import { useTranslation } from "react-i18next";
 import "../Tran/i18nextInit";
 import InputRd from '../../Form/inputrd';
@@ -242,7 +240,7 @@ const SegmentSt = (props) => {
                     </div>
                     <View style={styles.row}>
                     <div class="row mx-4">
-                        <Text style={tailwind('p-2 text-Indigo-700 items-center ')}>Repolarisation précoce :</Text>
+                        <Text style={tailwind('p-2 text-Indigo-700 items-center ')}>Repolarisation précoce:</Text>
                         <InputRd id="54" name1="Non" onChange={handle21Change} type="radio" value="Non" name="gender12" /> 
                         <InputRd id="55" name1="Oui" onChange={handle21Change} type="radio" value="Oui" name="gender12" /> 
                     </div>

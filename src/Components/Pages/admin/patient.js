@@ -42,7 +42,7 @@ const Patient = (props) => {
          {typeof(props.patientList1) !== undefined &&
          <Element name="test7" className="element" id="containerElement"  style={{ height: '500px', position: "relative",  overflow: "scroll", marginBottom: '100px'}}><JSONViewer json={props.patientList1} /></Element>
          }
-          
+          <FormButton title="Retour" onPress={() => { props.navigation.navigate("HomeAdmin") }} />
               </div>
       );
 };

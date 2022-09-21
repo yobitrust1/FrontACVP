@@ -5,12 +5,11 @@ import * as actions from "../../../Actions/medicalService";
 import { connect } from "react-redux";
 import { View, Text, StyleSheet } from 'react-native';
 //import 'localstorage-polyfill';
-import FormInput from '../../Form/FormInput';
+import FormInput3 from '../../Form/FormInput3';
 import Container from '@material-ui/core/Container';
 import ParticlesBg from "particles-bg";
 import '../home.css';
 import Steps from "../../Form/Steps";
-import FormInput3 from "../../Form/FormInput3";
 import { useTranslation } from "react-i18next";
 import "../Tran/i18nextInit";
 import InputRd from '../../Form/inputrd';
@@ -40,17 +39,17 @@ const EtudeQRS = (props) => {
     const [axeNormale, setAxeNormale] = useState(false)
     const [deviation, setDeviation] = useState(0)
     const [ondeQ, setOndeQ] = useState(false)
-    const [siOui, setSiOui ] = useState()
+    const [siOui, setSiOui] = useState()
     const [scolow, setScolow] = useState(0)
     const [bbg, setBbg] = useState(false)
     const [bbd, setBbd] = useState(false)
-    const [surchrge , setSurchrge ] = useState(false)
-    const [sioui, setSioui ] = useState()
-    const [sioui2, setSioui2 ] = useState()
-    const [sioui3, setSioui3 ] = useState()    
+    const [surchrge, setSurchrge] = useState(false)
+    const [sioui, setSioui] = useState()
+    const [sioui2, setSioui2] = useState()
+    const [sioui3, setSioui3] = useState()    
     var handle10Change = (newValue, text) => {
-      if (newValue == true) setSiOui (siOui + " " + text)
-      else setSiOui (siOui.replace(text + " ", ""))
+      if (newValue == true) setSiOui(siOui + " " + text)
+      else setSiOui(siOui.replace(text + " ", ""))
       
   }
     var handle11Change = (text) => {
@@ -65,11 +64,8 @@ const EtudeQRS = (props) => {
     var handle1Change = (text) => {
       setDuree(text)
     }
-    var handle2Change = (data) => {
-      if (data.target.value==="Oui")
-      setAxeNormale(true)
-      if (data.target.value==="Non")
-      setAxeNormale(false)
+    var handle2Change = (text) => {
+      setAxeNormale(text)
     }
     var handle3Change = (text) => {
 
@@ -100,9 +96,9 @@ const EtudeQRS = (props) => {
       }
       var handle8Change = (data) => {
         if (data.target.value==="Oui")
-        setSurchrge (true)
+        setSurchrge(true)
         if (data.target.value==="Non")
-        setSurchrge (false)
+        setSurchrge(false)
       }
 
     var handleSubmit = (e) => {
@@ -113,7 +109,7 @@ const EtudeQRS = (props) => {
           ondeQ:ondeQ,
           siOui:siOui,
           scolow:scolow,
-          surchrge :surchrge ,
+          surchrge:surchrge,
           bbg:bbg,
           bbd:bbd,
           sioui:sioui,
@@ -138,12 +134,12 @@ const EtudeQRS = (props) => {
           <MDBCard>
             <View style={tailwind(' items-center ')} >
             <Text style={tailwind('p-2 text-indigo-700 text-2xl')}>Etude du complexe QRS</Text>
-            <FormInput
+            <FormInput3
             type="number"
             placeholder="Durée de QRS(ms)"
             onChangeText={handle1Change}
             />
-            <FormInput
+            <FormInput3
             type="number"
             placeholder="Axe de QRS en degré:"
             onChangeText={handle2Change}
@@ -183,7 +179,7 @@ const EtudeQRS = (props) => {
         </div>
                    }
             <Text style={tailwind('p-2 text-indigo-700 text-2xl')}>Indice de Sokolow:</Text>
-            <FormInput
+            <FormInput3
             type="number"
             placeholder="Indice de sokolow en mm"
             onChangeText={handle5Change}
@@ -198,12 +194,12 @@ const EtudeQRS = (props) => {
             {surchrge === true &&
                     <View style={styles.row}>
                     <div class="row mx-4">
-                      <Text style={tailwind('text-lg p-2 text-Indigo-700')}>si oui :</Text>
-                      <InputRd id="8" name1="Surchrge systolique" type="radio" value="systolique" name="gender4"onChange={handle11Change} /> 
-                      <InputRd id="9" name1="Surchrge diastolique" type="radio" value="diastolique" name="gender4"onChange={handle11Change} /> 
+                      <Text style={tailwind('text-lg p-2 text-Indigo-700')}>si oui:</Text>
+                      <InputRd id="8" name1="Surchrgesystolique" type="radio" value="systolique" name="gender4"onChange={handle11Change} /> 
+                      <InputRd id="9" name1="Surchrgediastolique" type="radio" value="diastolique" name="gender4"onChange={handle11Change} /> 
                     </div>
                     </View>}
-                    <Text style={tailwind('p-2 text-indigo-700 text-2xl')}>Bloc de branche :</Text>
+                    <Text style={tailwind('p-2 text-indigo-700 text-2xl')}>Bloc de branche:</Text>
             <View style={styles.row}>
             <div class="row mx-4">
               <Text style={tailwind('text-lg p-2 text-Indigo-700')}>BBG : </Text>
@@ -214,7 +210,7 @@ const EtudeQRS = (props) => {
             {bbg === true &&
                     <View style={styles.row}>
                     <div class="row mx-4">
-                      <Text style={tailwind('text-lg p-2 text-Indigo-700')}>si oui :</Text>
+                      <Text style={tailwind('text-lg p-2 text-Indigo-700')}>si oui:</Text>
                       <InputRd id="11" name1="incomplet"  type="radio" value="incomplet" name="gender6" onChange={handle12Change}/> 
                       <InputRd id="12" name1="complet" type="radio" value="complet" name="gender6" onChange={handle12Change}/> 
                     </div>
@@ -229,7 +225,7 @@ const EtudeQRS = (props) => {
             {bbd === true &&
                     <View style={styles.row}>
                     <div class="row mx-4">
-                      <Text style={tailwind('text-lg p-2 text-Indigo-700')}>si oui :</Text>
+                      <Text style={tailwind('text-lg p-2 text-Indigo-700')}>si oui:</Text>
                       <InputRd id="15" name1="incomplet" type="radio" value="incomplet" name="gender8" onChange={handle13Change}/> 
                       <InputRd id="16" name1="complet" type="radio" value="complet" name="gender8" onChange={handle13Change}/> 
                     </div>

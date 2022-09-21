@@ -31,6 +31,11 @@ export const medicalService = (state = initialState, action) => {
           ...state,
           loggedUser:null
       }
+      case ACTION_TYPES.LOGOUT1:
+        return{
+          ...state,
+          loggedUserAdmin:null
+      }
       case ACTION_TYPES.ADD_PATIENT:
         return {
           ...state,

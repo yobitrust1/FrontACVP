@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseUrl = "https://5d74-41-229-134-61.ngrok.io/";
+const baseUrl = "https://test.yobitrust.com:8443/card/";
 export default {
   medicalService(url = baseUrl) {
     return {

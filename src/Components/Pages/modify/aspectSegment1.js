@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import { View, Text, StyleSheet } from 'react-native';
 //import 'localstorage-polyfill';
 import FormInput from '../../Form/FormInput';
+import InputRd from '../../Form/inputrd';
 import Container from '@material-ui/core/Container';
 import ParticlesBg from "particles-bg";
 import '../home.css';
@@ -34,13 +35,22 @@ const AspectSegment = (props) => {
     useEffect(() => {
     })
     const [asp, setAsp] = useState()
-    const [intervalle, setIntervalle] = useState("")
-
-
-    var handle1Change = (text) => {
-
-        setIntervalle(text)
+    const [type, setType] = useState("")
+    const [qt, setQt] = useState("")
+    const [qtc, setQtc] = useState("")
+    
+    
+    var handle3Change = (text) => {
+      setType(text.target.value)
     }
+    var handle4Change = (text) => {
+      setQt(text)
+    }
+    var handle5Change = (text) => {
+      setQtc(text)
+    }
+
+   
     var handle2Change = (data) => {
       if (data.target.value==="Oui")
       setAsp(true)
@@ -51,7 +61,9 @@ const AspectSegment = (props) => {
     var handleSubmit = (e) => {
         var values = {
             asp:asp,
-            intervalle:intervalle
+            type:type,
+            qt:qt,
+            qtc:qtc,
         }
         console.log(values)
         e.preventDefault();
@@ -60,7 +72,7 @@ const AspectSegment = (props) => {
     }
 
     return (
-<section className="landing-background">
+<section className="landing-background101">
             <div class="row">
   <div class=" d-flex  m-4 col-md-6  " >
   <MDBContainer   >
@@ -70,30 +82,36 @@ const AspectSegment = (props) => {
             <View style={tailwind(' items-center ')} >
             <Text style={tailwind('p-2 text-indigo-700 text-2xl')}>Aspect de Brugada en V1 et V2 : </Text>
             <Text style={tailwind('text-lg p-2 text-Indigo-700')}> </Text>
-            <Text style={tailwind('text-lg p-2 text-Indigo-700')}>{t("Si repolarisation précoce : préciser l’aspect du segment ST :")}</Text>
-            <Text style={tailwind('text-lg p-2 text-Indigo-700')}>{t("ascendant,")}</Text>
-            <Text style={tailwind('text-lg p-2 text-Indigo-700')}>{t("horizontal ou descendant")}</Text>
             <View style={styles.row}>
-            <div  >
+            <div class="row mx-4" >
                 <Text style={tailwind('text-lg p-2 text-Indigo-700')}>{t("Aspect de Brugada en V1 et V2")}</Text>
-                <input onChange={handle2Change} type="radio" value="Non" name="gender" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Non")}</Text>
-                <input onChange={handle2Change} type="radio" value="Oui" name="gender" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Oui")}</Text>
+                <InputRd id="1" name1="Non" onChange={handle2Change} type="radio" value="Non" name="gender" /> 
+                <InputRd id="2" name1="Oui" onChange={handle2Change} type="radio" value="Oui" name="gender" /> 
             </div>
+            
             </View>
+            {asp === true &&
+            <div class="row mx-4" >
+            <InputRd id="3" name1="type1"  type="radio" value="type1" name="gender155" onChange={handle3Change}/> 
+                <InputRd id="4" name1="type2"  type="radio" value="type3" name="gender155" onChange={handle3Change}/> 
+                <InputRd id="5" name1="type3"  type="radio" value="type3" name="gender155" onChange={handle3Change}/> 
+            </div>}
             <Text style={tailwind('p-2 text-indigo-700 text-2xl')}>Intervalle QT :</Text>
         <FormInput3
           placeholder="QT mesuré en ms en D2 et V5:"
-          onChange={handle1Change}
+          onChange={handle4Change}
         />
         <FormInput3
           placeholder="QT corrigé en ms:"
-          onChange={handle1Change}
+          onChange={handle5Change}
         />
 
 
 
-<FormButton title={t("Annuler")} onPress={() => { props.navigation.navigate("PatientDetails") }} />
-                    <FormButton title={t("Enregistre")} onPress={handleSubmit} /> 
+                <View style={styles.row}>
+                    <FormButton title={t("Précédent")} onPress={() => { props.navigation.navigate("PatientDetails") }} />
+                    <FormButton title={t("Enregistre")} onPress={handleSubmit} />
+                </View>
             </View>
            </MDBCard>
         </MDBCol>

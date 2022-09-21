@@ -67,7 +67,11 @@ const Login = (props) => {
       }} ></div></div>
 <div class="container p-200 " >
 <div class="row p-2">
-<div class="col-sm-3 container"><img src={logo1} width="250" height="250" /> </div>
+<div class="col-sm-3 container"><img src={logo1} width="250" height="250" />
+<div class="row d-flix justify-centent-center ">
+<FormButton title={"Précédent"} onPress={() => { props.navigation.navigate("Open") }} />
+
+</div> </div>
 <div class="col-sm-3 container">
 <div className="rainbow-p-vertical_large rainbow-p-horizontal_xx-large rainbow-m-horizontal_xx-large">
       </div>
@@ -96,7 +100,7 @@ const Login = (props) => {
     
     <button type="submit" class="btn btn-in float-right" onClick={handleSubmit}>Se connecter</button>
   </div>
-<div class="copy-text">Copyright 2021 All rights reserved |<i class="fa fa-heart"></i> <a href="http://grafreez.com">yobitrust</a></div>
+<div class="copy-text">Copyright 2021 All rights reserved |<i class="fa fa-heart"></i> <a href="https://yobitrust.com/">yobitrust</a></div>
     </div>
     
 </div>

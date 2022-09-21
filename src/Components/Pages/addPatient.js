@@ -1,6 +1,7 @@
 import React, { useState, useEffect,useMemo } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import FormInput3 from "../Form/FormInput3";
+import FormInput from "../Form/FormInput";
 import tailwind from 'tailwind-rn';
 import Steps from "../Form/Steps";
 import FormButton from '../Form/FormButton';
@@ -143,8 +144,8 @@ const AddPatient = (props) => {
 
       <View style={tailwind(' items-center ')}>
       
-        <FormInput3 placeholder="nom et prenom"        
-        onChange={handleCinChange} />
+        <FormInput placeholder="nom et prenom"        
+        onChangeText={handleCinChange} />
        
         <div class="col-sm-6">
        <Select options={options} value={value} onChange={changeHandler} /></div>
@@ -201,9 +202,8 @@ const AddPatient = (props) => {
           </div>
       
         <FormInput3
-          mask="999"
           placeholder={t("Nombre d’heure de sport par semaine")}
-          onChange={handleNhChange}
+          onChangeText={handleNhChange}
         />
         <View style={styles.row}>
           <FormButton title={t("Annuler")} onPress={handleExit} />

@@ -57,14 +57,15 @@ const ATCDchir1 = (props) => {
         <MDBCol md="6">
           <MDBCard>
           <form>
-                    <FormButton2 title="Interrogatoire" onPress={() => { props.navigation.navigate("Interrogatoire1") }} />
+                    <FormButton2 title="Antécédents familiaux" onPress={() => { props.navigation.navigate("Interrogatoire1") }} />
                     <FormButton2 title="Examen clinique" onPress={() => { props.navigation.navigate("ExamenClinique1") }} />
-                    <FormButton2 title="Étude de l’ECG" onPress={() => { props.navigation.navigate("EtudeECG1") }} />
+                    <FormButton2 title="Le rythme cardiaque " onPress={() => { props.navigation.navigate("EtudeECG1") }} />
                     <FormButton2 title="Etude du complexe QRS" onPress={() => { props.navigation.navigate("EtudeQRS1") }} />
-                    <FormButton2 title="Étude de l'onde T" onPress={() => { props.navigation.navigate("EtudeOndeT1") }} />
                     <FormButton2 title="Segment St" onPress={() => { props.navigation.navigate("SegmentSt1") }} />
-                    <FormButton2 title="l’aspect du segment ST" onPress={() => { props.navigation.navigate("Interrogatoire1") }} />
-                    <FormButton2 title="Echographie cardiaque" onPress={() => { props.navigation.navigate("Ventricule1") }} />
+                    <FormButton2 title="Étude de l'onde T" onPress={() => { props.navigation.navigate("EtudeOndeT1") }} />
+                    <FormButton2 title="Aspect de Brugada en V1 et V2" onPress={() => { props.navigation.navigate("AspectSegment1") }} />
+                    <FormButton2 title="Echographie cardiaque" onPress={() => { props.navigation.navigate("Ventricule11") }} />
+                    <FormButton2 title="Echographie cardiaque 2" onPress={() => { props.navigation.navigate("Ventricule21") }} />
                     <FormButton2 title="IRM cardiaque" onPress={() => { props.navigation.navigate("FicheIRM1") }} />
                     <FormButton2 title="Epaisseurs diastoliques" onPress={() => { props.navigation.navigate("Cercle11") }} />
                     <FormButton2 title="Epaisseurs systoliques" onPress={() => { props.navigation.navigate("Cercle21") }} />

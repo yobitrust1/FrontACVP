@@ -17,7 +17,6 @@ const FormInput = (props) => {
           min={props.min}
           max={props.max}
           
-          //error={text > 12 ? 'Enter a number less than 12' : ''}
           onChange={(text) => props.onChangeText(text.target.value)}/>
       </View>
 

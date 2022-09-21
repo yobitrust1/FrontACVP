@@ -52,13 +52,13 @@ const Info = (props) => {
           <Element name="test7" className="element" id="containerElement" style={{ position: "relative",  overflow: "scroll"}}><JSONViewer json={props.patientList["ventricule"]} /></Element>
           <Text style={tailwind('text-gray-700 font-bold py-2 text-xl')}>examBio:</Text>
           <Element name="test7" className="element" id="containerElement" style={{ position: "relative",  overflow: "scroll"}}><JSONViewer json={props.patientList["ficheIRM"]} /></Element>
-          <Text style={tailwind('text-gray-700 font-bold py-2 text-xl')}>traitement:</Text>
+          <Text style={tailwind('text-gray-700 font-bold py-2 text-xl')}>Epaisseurs diastoliques:</Text>
           <Element name="test7" className="element" id="containerElement" style={{ position: "relative",  overflow: "scroll"}}><JSONViewer json={props.patientList["cercle1"]} /></Element>
-          <Text style={tailwind('text-gray-700 font-bold py-2 text-xl')}>traitement:</Text>
+          <Text style={tailwind('text-gray-700 font-bold py-2 text-xl')}>Epaisseurs systoliques:</Text>
           <Element name="test7" className="element" id="containerElement" style={{ position: "relative",  overflow: "scroll"}}><JSONViewer json={props.patientList["cercle2"]} /></Element>
-          <Text style={tailwind('text-gray-700 font-bold py-2 text-xl')}>traitement:</Text>
+          <Text style={tailwind('text-gray-700 font-bold py-2 text-xl')}>Epaissement absolu:</Text>
           <Element name="test7" className="element" id="containerElement" style={{ position: "relative",  overflow: "scroll"}}><JSONViewer json={props.patientList["cercle3"]} /></Element>
-          <Text style={tailwind('text-gray-700 font-bold py-2 text-xl')}>traitement:</Text>
+          <Text style={tailwind('text-gray-700 font-bold py-2 text-xl')}>Epaissement relatif:</Text>
           <Element name="test7" className="element" id="containerElement" style={{ position: "relative",  overflow: "scroll"}}><JSONViewer json={props.patientList["cercle4"]} /></Element>
           <Text style={tailwind('text-gray-700 font-bold py-2 text-xl')}>evolution:</Text>
           <Element name="test7" className="element" id="containerElement" style={{ position: "relative",  overflow: "scroll"}}><JSONViewer json={props.patientList["fiche"]} /></Element>

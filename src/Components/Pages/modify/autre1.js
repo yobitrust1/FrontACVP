@@ -10,7 +10,7 @@ import Container from '@material-ui/core/Container';
 import ParticlesBg from "particles-bg";
 import '../home.css';
 import Steps from "../../Form/Steps";
-import FormInput3 from "../../Form/FormInput3";
+import InputRd from '../../Form/inputrd';
 import { useTranslation } from "react-i18next";
 import "../Tran/i18nextInit";
 import NumericInput from 'react-numeric-input';
@@ -72,7 +72,7 @@ const Autre = (props) => {
     }
 
     return (
-<section className="landing-background">
+<section className="landing-background100">
             <div class="row">
   <div class=" d-flex  m-4 col-md-6  " >
   <MDBContainer   >
@@ -85,26 +85,32 @@ const Autre = (props) => {
             <label><h3>Durée de l’EE (min)</h3>
             <NumericInput mobile className="form-control" min={1} max={60} onChange={handleChange} />
             </label>
-            <label><h3>Arrêt de l’EE : -FC (%)</h3>
+            <label><h3>FC a l'arrêt de l’EE : -FC (%)</h3>
             <NumericInput mobile className="form-control" min={10} max={120} onChange={handle1Change} />
             </label>
-            <label><h3>Palier N</h3>
+            <label><h3>Numero du palier a l'arret de l'effort</h3>
             <NumericInput mobile className="form-control" min={1} max={10} onChange={handle2Change} />
             </label>
+            <Text style={tailwind('text-lg p-2 text-gray-700')}>Motif d’arrêt :</Text>
             <div  >
-                <Text style={tailwind('text-lg p-2 text-gray-700')}>Motif d’arrêt</Text>
-                <input onChange={handle3Change} type="radio" value="épuisement musculaire" name="gender" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>épuisement musculaire</Text>
-                <input onChange={handle3Change} type="radio" value="troubles de conduction sévères" name="gender" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>troubles de conduction sévères</Text>
-                <input onChange={handle3Change} type="radio" value="troubles de rythme sévères" name="gender" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>troubles de rythme sévères</Text>
-                <input onChange={handle3Change} type="radio" value="troubles de répolarisation" name="gender" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>troubles de répolarisation</Text>
-                <input onChange={handle3Change} type="radio" value="dyspnée" name="gender" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>dyspnée</Text>
-                <input onChange={handle3Change} type="radio" value="douleurs thoraciques" name="gender" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>douleurs thoraciques</Text>
+                
+            <div><InputRd id="1" name1="épuisement musculaire" onChange={handle3Change} type="radio" value="épuisement musculaire" name="gender" /> 
+                </div  ><div><InputRd id="2" name1="troubles de conduction sévères" onChange={handle3Change} type="radio" value="troubles de conduction sévères" name="gender" /> 
+                </div  ><div><InputRd id="3" name1="troubles de rythme sévères" onChange={handle3Change} type="radio" value="troubles de rythme sévères" name="gender" /> 
+                </div  ><div><InputRd id="4" name1="troubles de répolarisation significatives" onChange={handle3Change} type="radio" value="troubles de répolarisation" name="gender" /> 
+                </div  ><div><InputRd id="5" name1="dyspnée" onChange={handle3Change} type="radio" value="dyspnée" name="gender" /> 
+                </div  ><div><InputRd id="6" name1="douleur thoracique" onChange={handle3Change} type="radio" value="douleurs thoraciques" name="gender" /> 
+                </div  ><div><InputRd id="7" name1="atteinte de la FMT" onChange={handle3Change} type="radio" value="douleurs thoraciques" name="gender" /> 
+                </div  >
             </div>
             <label><h3>Conclusion</h3>
-            <NumericInput mobile className="form-control" min={0} max={100} onChange={handle4Change} />
+            <FormInput/>
             </label>
-            <FormButton title={t("Annuler")} onPress={() => { props.navigation.navigate("PatientDetails") }} />
-                    <FormButton title={t("Enregistre")} onPress={handleSubmit} />            </View>
+                <View style={styles.row}>
+                    <FormButton title={t("Précédent")} onPress={() => { props.navigation.navigate("PatientDetails") }} />
+                    <FormButton title={t("Enregistre")} onPress={handleSubmit} />
+                </View>
+            </View>
            </MDBCard>
         </MDBCol>
       </MDBRow>

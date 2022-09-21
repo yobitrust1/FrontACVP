@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import tailwind from 'tailwind-rn';
 import FormButton from "../../Form/FormButton";
-import MDBInput from "../../Form/FormInput4";
+import FormInput from "../../Form/FormInput";
 import * as actions from "../../../Actions/medicalService";
 import { connect } from "react-redux";
 import { Text, View, Image} from 'react-native';
@@ -11,10 +11,27 @@ import Container from '@material-ui/core/Container';
 import ParticlesBg from "particles-bg";
 import '../home.css';
 import SideNav from '../../Form/SideNav'
-import MaskedInput from "react-text-mask";
-import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody,  MDBBtn, MDBIcon, MDBModalFooter } from 'mdbreact';
+import "bootstrap/dist/css/bootstrap.min.css";
+import docc from"../../img/doc.png";
+import diss from"../../img/dis.jpg";
+import logo from '../../img/12.png';
+import logo1 from '../../img/13.png';
 const Admin = (props) => {
-  useEffect(() => {
+  let config = {
+      num: [4, 7],
+      rps: 0.1,
+      radius: [5, 40],
+      life: [1.5, 3],
+      v: [2, 3],
+      tha: [-50, 50],
+      alpha: [0.6, 0],
+      scale: [.1, 0.9],
+      position: "all",
+      color: [ "#ff0000"],
+      cross: "dead",
+      random: 10
+    };
+     useEffect(() => {
   }, [props.loggedUser])
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
@@ -22,15 +39,14 @@ const Admin = (props) => {
 
 
   const handleUsernameChange = (text) => {
-    setUsername(text)
+    setUsername(text.target.value)
 
   }
 
   const handlePasswordChange = (text) => {
-    setPassword(text)
+    setPassword(text.target.value)
 
   }
-
   const handleSubmit = (e) => {
     const values = {
       username: username,
@@ -42,95 +58,71 @@ const Admin = (props) => {
   }
 
   return (
-    <section className="landing-background1">
-      <div class=" d-flex align-items-center m-4 " style={{height: "550px"}}>
-<MDBContainer  style={{height: "350px"}}>
-      <MDBRow>
-        <MDBCol md="6">
-      {(props.loggedUserAdmin !== null) && typeof (props.loggedUserAdmin) !== 'string' && (props.navigation.navigate("HomeAdmin"))}          <MDBCard>
-            <MDBCardBody className="mx-4">
-              <div className="text-center">
-                <h3 className="dark-grey-text mb-5">
-                  <strong>Sign in</strong>
-                </h3>
-              </div>
-              <MDBInput
-                label="Your email"
-                group
-                type="email"
-                validate
-                error="wrong"
-                success="right"
-                onChangeText={handleUsernameChange}
-              />
+    <section className="landing-background109">
+<div ><div><div style={{
+        width: "200px",
+        height: "100px",
+      }} ></div></div>
+<div class="container p-200 " >
+<div class="row p-2">
+<div class="col-sm-3 container"><img src={logo1} width="250" height="250" /> 
+<div class="row d-flix justify-centent-center ">
+<FormButton title={"Précédent"} onPress={() => { props.navigation.navigate("Open") }} />
 
-              <MDBInput
-                label="Your password"
-                group
-                type="password"
-                validate
-                containerClass="mb-0"
-                onChangeText={handlePasswordChange}
-              />
+</div> </div>
+<div class="col-sm-3 container">
+  
+<div className="rainbow-p-vertical_large rainbow-p-horizontal_xx-large rainbow-m-horizontal_xx-large">
+  
+      </div>
 
-              <div className="text-center mb-3">
-                <MDBBtn
-                  type="button"
-                  gradient="blue"
-                  rounded
-                  className="btn-block z-depth-1a"
-                  onClick={handleSubmit}
-                >
-                  Sign in
-                </MDBBtn>
-              </div>
-              <p className="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2">
+{(props.loggedUserAdmin !== null) && typeof (props.loggedUserAdmin) !== 'string' && (props.navigation.navigate("HomeAdmin"))}
+      
 
-
-              </p>
-              <div className="row my-3 d-flex justify-content-center">
-                <MDBBtn
-                  type="button"
-                  color="white"
-                  rounded
-                  className="mr-md-3 z-depth-1a"
-                >
-                  <MDBIcon fab icon="facebook-f" className="blue-text text-center" />
-                </MDBBtn>
-                <MDBBtn
-                  type="button"
-                  color="white"
-                  rounded
-                  className="mr-md-3 z-depth-1a"
-                >
-                  <MDBIcon fab icon="twitter" className="blue-text" />
-                </MDBBtn>
-                <MDBBtn
-                  type="button"
-                  color="white"
-                  rounded
-                  className="z-depth-1a"
-                >
-                  <MDBIcon fab icon="google-plus-g" className="blue-text" />
-                </MDBBtn>
-              </div>
-            </MDBCardBody>
-            <MDBModalFooter className="mx-5 pt-3 mb-1">
-
-            </MDBModalFooter>
-          </MDBCard>
-        </MDBCol>
-      </MDBRow>
-    </MDBContainer>
+      <section class="login-block">
+    <div class="container">
+  <div class="row">
+    <div >
+        <h2 class="text-center">Login Admin </h2>
+        
+  <div class="form-group">
+    <label for="exampleInputEmail1" class="text-uppercase">Username</label>
+    <input type="text" class="form-control" onChange={handleUsernameChange} placeholder=""/>
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleInputPassword1" class="text-uppercase">Password</label>
+    <input type="password" class="form-control" onChange={handlePasswordChange} placeholder=""/>
+  </div>
+  
+  
+    <div class="form-check">
+    
+    <button type="submit" class="btn btn-in float-right" onClick={handleSubmit}>Se connecter</button>
+  </div>
+<div class="copy-text">Copyright 2021 All rights reserved |<i class="fa fa-heart"></i> <a href="https://yobitrust.com/">yobitrust</a></div>
     </div>
+    
+</div>
+</div>
+</section>
+</div>
+<div class="col-sm-3 container"><img src={logo} width="250" height="250" /> </div>        
+       
+  
+  
+  </div>
+</div>
+    </div>
+    
     </section>
   );
 };
-
 const mapStateToProps = (state) => ({
   loggedUserAdmin: state.medicalService.loggedUserAdmin,
 });
 const mapActionToProps = {
   loginAdmin: actions.loginAdmin,
+  logout: actions.logout
 };
 export default connect(mapStateToProps, mapActionToProps)(Admin);

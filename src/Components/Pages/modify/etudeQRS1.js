@@ -13,6 +13,8 @@ import Steps from "../../Form/Steps";
 import FormInput3 from "../../Form/FormInput3";
 import { useTranslation } from "react-i18next";
 import "../Tran/i18nextInit";
+import InputRd from '../../Form/inputrd';
+import FormCheckBox from "../../Form/CheckBox";
 import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody,  MDBBtn, MDBIcon, MDBModalFooter } from 'mdbreact';
 
 let config = {
@@ -38,12 +40,29 @@ const EtudeQRS = (props) => {
     const [axeNormale, setAxeNormale] = useState(false)
     const [deviation, setDeviation] = useState(0)
     const [ondeQ, setOndeQ] = useState(false)
+    const [siOui, setSiOui ] = useState()
     const [scolow, setScolow] = useState(0)
     const [bbg, setBbg] = useState(false)
     const [bbd, setBbd] = useState(false)
     const [surchrge , setSurchrge ] = useState(false)
+    const [sioui, setSioui ] = useState()
+    const [sioui2, setSioui2 ] = useState()
+    const [sioui3, setSioui3 ] = useState()    
+    var handle10Change = (newValue, text) => {
+      if (newValue == true) setSiOui (siOui + " " + text)
+      else setSiOui (siOui.replace(text + " ", ""))
+      
+  }
+    var handle11Change = (text) => {
+      setSioui(text.target.value)
+    }
+    var handle12Change = (text) => {
+      setSioui2(text.target.value)
+    }
+    var handle13Change = (text) => {
+      setSioui3(text.target.value)
+    }
     var handle1Change = (text) => {
-
       setDuree(text)
     }
     var handle2Change = (data) => {
@@ -92,11 +111,14 @@ const EtudeQRS = (props) => {
           axeNormale:axeNormale,
           deviation:deviation,
           ondeQ:ondeQ,
+          siOui:siOui,
           scolow:scolow,
           surchrge :surchrge ,
           bbg:bbg,
           bbd:bbd,
-          
+          sioui:sioui,
+          sioui2:sioui2,
+          sioui3:sioui3,
         }
         console.log(values)
         e.preventDefault();
@@ -105,7 +127,7 @@ const EtudeQRS = (props) => {
     }
 
     return (
-      <section className="landing-background">
+      <section className="landing-background203">
       <div>
       
       <div class="row">
@@ -118,7 +140,7 @@ const EtudeQRS = (props) => {
             <Text style={tailwind('p-2 text-indigo-700 text-2xl')}>Etude du complexe QRS</Text>
             <FormInput
             type="number"
-            placeholder="Durée (ms)"
+            placeholder="Durée de QRS(ms)"
             onChangeText={handle1Change}
             />
             <FormInput
@@ -126,31 +148,40 @@ const EtudeQRS = (props) => {
             placeholder="Axe de QRS en degré:"
             onChangeText={handle2Change}
             />
-            <FormInput
-            type="number"
-            placeholder="orientation de l'axe:"
-            />
             
-            <Text style={tailwind('text-lg p-2 text-Indigo-700')}>Axe non devié:</Text>
+            
+            <Text style={tailwind('text-lg p-2 text-Indigo-700')}>orientation de l'axe:</Text>
             <View style={styles.row}>
             <div >
-              <input onChange={handle3Change} type="radio" value="Axe non devié" name="gender1" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>Axe non devié</Text>
-              <input onChange={handle3Change} type="radio" value="Déviation axiale gauche" name="gender1" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>"Déviation axiale gauche"</Text>
-              <input onChange={handle3Change} type="radio" value="Déviation axiale droite" name="gender1" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>"Déviation axiale droite"</Text>
+              <InputRd id="1" name1="Axe non devié" onChange={handle3Change} type="radio" value="Axe non devié" name="gender1" /> 
+              <InputRd id="2" name1="Déviation axiale gauche" onChange={handle3Change} type="radio" value="Déviation axiale gauche" name="gender1" /> 
+              <InputRd id="3" name1="Déviation axiale droite" onChange={handle3Change} type="radio" value="Déviation axiale droite" name="gender1" /> 
             </div>
             </View>
             
             <View style={styles.row}>
-            <div  >
+            <div class="row mx-4">
               <Text style={tailwind('text-lg p-2 text-Indigo-700')}>Onde Q</Text>
-              <input onChange={handle4Change} type="radio" value="Non" name="gender2" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Non")}</Text>
-              <input onChange={handle4Change} type="radio" value="Oui" name="gender2" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Oui")}</Text>
+              <InputRd id="4" name1="Non" onChange={handle4Change} type="radio" value="Non" name="gender2" /> 
+              <InputRd id="5" name1="Oui" onChange={handle4Change} type="radio" value="Oui" name="gender2" /> 
             </div>
             </View>
             {ondeQ === true &&
-                    <FormInput
-                    placeholder="préciser le siège"
-                  />}
+            <div>
+            <FormCheckBox text='D1' value={false} onPress={handle10Change} />
+            <FormCheckBox text='D2' value={false} onPress={handle10Change} />
+            <FormCheckBox text='D3' value={false} onPress={handle10Change} />
+            <FormCheckBox text="AVR" value={false} onPress={handle10Change} />
+            <FormCheckBox text="AVL" value={false}  onPress={handle10Change} />
+            <FormCheckBox text=" AVF" value={false}  onPress={handle10Change} />
+            <FormCheckBox text=" V1" value={false}  onPress={handle10Change} />
+            <FormCheckBox text=" V2" value={false}  onPress={handle10Change} />
+            <FormCheckBox text=" V3" value={false}  onPress={handle10Change} />
+            <FormCheckBox text=" V4" value={false}  onPress={handle10Change} />
+            <FormCheckBox text=" V5" value={false}  onPress={handle10Change} />
+            <FormCheckBox text=" V6" value={false}  onPress={handle10Change} />
+        </div>
+                   }
             <Text style={tailwind('p-2 text-indigo-700 text-2xl')}>Indice de Sokolow:</Text>
             <FormInput
             type="number"
@@ -158,53 +189,55 @@ const EtudeQRS = (props) => {
             onChangeText={handle5Change}
             />
             <View style={styles.row}>
-            <div  >
-              <Text style={tailwind('text-lg p-2 text-Indigo-700')}>Surchrge :</Text>
-              <input onChange={handle8Change} type="radio" value="Non" name="gender3" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Non")}</Text>
-              <input onChange={handle8Change} type="radio" value="Oui" name="gender3" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Oui")}</Text>
+            <div class="row mx-4">
+              <Text style={tailwind('text-lg p-2 text-Indigo-700')}>HVG :</Text>
+              <InputRd id="6" name1="Non"  onChange={handle8Change} type="radio" value="Non" name="gender3" /> 
+              <InputRd id="7" name1="Oui"  onChange={handle8Change} type="radio" value="Oui" name="gender3" /> 
             </div>
             </View>
             {surchrge === true &&
                     <View style={styles.row}>
-                    <div  >
+                    <div class="row mx-4">
                       <Text style={tailwind('text-lg p-2 text-Indigo-700')}>si oui :</Text>
-                      <input  type="radio" value="systolique" name="gender4" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>systolique</Text>
-                      <input  type="radio" value="diastolique" name="gender4" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>diastolique</Text>
+                      <InputRd id="8" name1="Surchrge systolique" type="radio" value="systolique" name="gender4"onChange={handle11Change} /> 
+                      <InputRd id="9" name1="Surchrge diastolique" type="radio" value="diastolique" name="gender4"onChange={handle11Change} /> 
                     </div>
                     </View>}
-                    <Text style={tailwind('p-2 text-indigo-700 text-2xl')}>VII- Bloc de branche :</Text>
+                    <Text style={tailwind('p-2 text-indigo-700 text-2xl')}>Bloc de branche :</Text>
             <View style={styles.row}>
-            <div  >
+            <div class="row mx-4">
               <Text style={tailwind('text-lg p-2 text-Indigo-700')}>BBG : </Text>
-              <input onChange={handle6Change} type="radio" value="Non" name="gender5" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Non")}</Text>
-              <input onChange={handle6Change} type="radio" value="Oui" name="gender5" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Oui")}</Text>
+              <InputRd id="9" name1="Non"  onChange={handle6Change} type="radio" value="Non" name="gender5" /> 
+              <InputRd id="10" name1="Oui" onChange={handle6Change} type="radio" value="Oui" name="gender5" /> 
             </div>
             </View>
             {bbg === true &&
                     <View style={styles.row}>
-                    <div  >
+                    <div class="row mx-4">
                       <Text style={tailwind('text-lg p-2 text-Indigo-700')}>si oui :</Text>
-                      <input  type="radio" value="incomplet" name="gender6" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>incomplet</Text>
-                      <input  type="radio" value="complet" name="gender6" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>complet</Text>
+                      <InputRd id="11" name1="incomplet"  type="radio" value="incomplet" name="gender6" onChange={handle12Change}/> 
+                      <InputRd id="12" name1="complet" type="radio" value="complet" name="gender6" onChange={handle12Change}/> 
                     </div>
                     </View>}
             <View style={styles.row}>
-            <div  >
+            <div class="row mx-4">
               <Text style={tailwind('text-lg p-2 text-Indigo-700')}>BBD : </Text>
-              <input onChange={handle7Change} type="radio" value="Non" name="gender7" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Non")}</Text>
-              <input onChange={handle7Change} type="radio" value="Oui" name="gender7" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("Oui")}</Text>
+              <InputRd id="13" name1="Non" onChange={handle7Change} type="radio" value="Non" name="gender7" /> 
+              <InputRd id="14" name1="Oui" onChange={handle7Change} type="radio" value="Oui" name="gender7" /> 
             </div>
             </View>
             {bbd === true &&
                     <View style={styles.row}>
-                    <div  >
+                    <div class="row mx-4">
                       <Text style={tailwind('text-lg p-2 text-Indigo-700')}>si oui :</Text>
-                      <input  type="radio" value="incomplet" name="gender8" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>incomplet</Text>
-                      <input  type="radio" value="complet" name="gender8" /> <Text style={tailwind('text-lg p-2 text-gray-700')}>complet</Text>
+                      <InputRd id="15" name1="incomplet" type="radio" value="incomplet" name="gender8" onChange={handle13Change}/> 
+                      <InputRd id="16" name1="complet" type="radio" value="complet" name="gender8" onChange={handle13Change}/> 
                     </div>
                     </View>}
-                    <FormButton title={t("Annuler")} onPress={() => { props.navigation.navigate("PatientDetails") }} />
+                <View style={styles.row}>
+                    <FormButton title={t("Précédent")} onPress={() => { props.navigation.navigate("PatientDetails") }} />
                     <FormButton title={t("Enregistre")} onPress={handleSubmit} />
+                </View>
             </View>
             </MDBCard>
         </MDBCol>

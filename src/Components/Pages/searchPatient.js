@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import tailwind from 'tailwind-rn';
+
 import * as actions from "../../Actions/medicalService";
 import { connect } from "react-redux";
 import { View, Text, StyleSheet } from 'react-native';
 import FormInput from "../Form/FormInput";
 import FormButton from "../Form/FormButton";
-import Container from '@material-ui/core/Container';
-import ParticlesBg from "particles-bg";
 import './home.css';
-//import 'localstorage-polyfill';
+import Steps from "../Form/Steps";
+import { useTranslation } from "react-i18next";
+import "./Tran/i18nextInit";
+import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody,  MDBBtn, MDBIcon, MDBModalFooter } from 'mdbreact';
 
-
-
-const SearchPatient = (props) => {
-  let config = {
+let config = {
       num: [4, 7],
       rps: 0.1,
       radius: [5, 40],
@@ -27,11 +26,15 @@ const SearchPatient = (props) => {
       cross: "dead",
       random: 10
     };
+
+
+const SearchPatient = (props) => {
+  const { t } = useTranslation();
   useEffect(() => {
-    props.search(search)
+    props.search(search,props.loggedUser.username)
   }, [])
 
-  const tableHead = ['Cin', 'Nom', 'Prenom']
+
   const [search, setSearch] = useState(0)
   const [search2, setSearch2] = useState(0)
 
@@ -42,39 +45,38 @@ const SearchPatient = (props) => {
   const handleSearch = () => {
     setSearch2(search)
     console.log(search)
-    props.search(search)
-
-
+    props.search(search,props.loggedUser.username)
   }
   return (
-<div>
-<div className="rainbow-p-vertical_large rainbow-p-horizontal_xx-large rainbow-m-horizontal_xx-large">
-<Container style={{borderradius: "100px", backgroundColor:"rgba(0,200,200,0.75)",backgroundsize: "cover"}} component="main" maxWidth="xs" >
-      <View style={tailwind(' items-center ')} >
-        <Text style={tailwind('text-gray-700 font-bold py-2 text-xl')}>Rechercher un patient</Text>
-        <View style={tailwind('py-8 items-center')}>
+    <section className="landing-background">
+      <div class="row">
+<div class=" d-flex  m-4 col-md-6  " >
+<MDBContainer   >
+      <MDBRow>
+        <MDBCol >
+          <MDBCard>
 
+      <View style={tailwind(' items-center ')} >
+        <Text style={tailwind('text-gray-700 font-bold py-2 text-xl')}>{t("Rechercher un patient11")}</Text>
+        <View style={tailwind('py-8 items-center')}>
           <FormInput
             placeholder="Search...Type CIN"
-            type="number-pad"
             onChangeText={handleSearchChange}
-            maxLength={Number("8")}
           />
-
-
-          <FormButton title="Rechercher" onPress={handleSearch} />
+          <FormButton title={t("Rechercher")}onPress={handleSearch} />
           <View style={tailwind('py-8 items-center')}>
             <Text style={tailwind("text-red-500")}>
               {(search2 != 0) && ((typeof (props.patientList) === 'string' && props.patientList) ||
                 (
                   <View style={tailwind('items-center')}>
-                  <Text style={tailwind('text-gray-700 font-bold py-2 text-xl')}>identifiant:{props.patientList["generalInformation"]["identifiant"]}</Text>
-                  <Text style={tailwind('text-gray-700 font-bold py-2 text-xl')}>Nom:{props.patientList["generalInformation"]["nom"]}</Text>
-                  <Text style={tailwind('text-gray-700 font-bold py-2 text-xl')}>prenom:{props.patientList["generalInformation"]["prenom"]}</Text>
+                  <Text style={tailwind('text-gray-700 font-bold py-2 text-xl')}>Nom et prenom:{props.patientList.cin}</Text>
                     <FormButton title="Details" onPress={() => { props.navigation.navigate("PatientDetails") }} />
                     <FormButton title="Information" onPress={() => { props.navigation.navigate("InfosGenerales2") }} />
                     <FormButton title="Save file" onPress={() => { props.navigation.navigate("Dashbord") }} />
                   </View>
+
+
+
                 ))}
 
             </Text>
@@ -91,19 +93,21 @@ const SearchPatient = (props) => {
           <FormButton title="Annuler" onPress={() => { props.navigation.navigate("Home"); }} />
 
         </View>
-
       </View>
-      </Container>
-      </div>
-      <ParticlesBg type="cobweb" config={config} bg={true} />
-      </div>
+      </MDBCard>
+        </MDBCol>
+      </MDBRow>
+    </MDBContainer>
+    </div>
+    <Steps  class="col-md-1"/>  
+    </div>
 
-
-  );
+    </section>  );
 };
 
 const mapStateToProps = (state) => ({
-  patientList: state.medicalService.patientList
+  patientList: state.medicalService.patientList,
+  loggedUser: state.medicalService.loggedUser,
 });
 const mapActionToProps = {
 

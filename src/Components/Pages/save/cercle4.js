@@ -5,14 +5,13 @@ import * as actions from "../../../Actions/medicalService";
 import { connect } from "react-redux";
 import { View, Text, StyleSheet } from 'react-native';
 //import 'localstorage-polyfill';
-import FormInput from '../../Form/FormInput';
 import Container from '@material-ui/core/Container';
 import ParticlesBg from "particles-bg";
 import '../home.css';
 import Steps from "../../Form/Steps";
-import FormInput3 from "../../Form/FormInput3";
 import { useTranslation } from "react-i18next";
 import "../Tran/i18nextInit";
+import FormInput4 from '../../Form/FormInput4';
 import NumericInput from 'react-numeric-input';
 import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody,  MDBBtn, MDBIcon, MDBModalFooter } from 'mdbreact';
 let config = {
@@ -145,71 +144,71 @@ const Cercle4 = (props) => {
             <Text style={tailwind('text-lg p-2 text-gray-700')}>{t("")}</Text>
             <div class="row">
             <label><h3>v1</h3>
-            <NumericInput mobile className="form-control" min={0} max={100} onChange={handleChange} />
+            <FormInput4  className="form-control" min={0} max={100} onChange={handleChange} />
             </label>
             <label><h3>v2</h3>
-            <NumericInput mobile className="form-control" min={0} max={100} onChange={handle1Change} />
+            <FormInput4  className="form-control" min={0} max={100} onChange={handle1Change} />
             </label>
             </div>
             <div class="row">
             <label><h3>v3</h3>
-            <NumericInput mobile className="form-control" min={0} max={100} onChange={handle2Change} />
+            <FormInput4  className="form-control" min={0} max={100} onChange={handle2Change} />
             </label>
             <label><h3>v4</h3>
-            <NumericInput mobile className="form-control" min={0} max={100} onChange={handle3Change} />
+            <FormInput4  className="form-control" min={0} max={100} onChange={handle3Change} />
             </label>
             </div>
             <div class="row">
             <label><h3>v5</h3>
-            <NumericInput mobile className="form-control" min={0} max={100} onChange={handle4Change} />
+            <FormInput4  className="form-control" min={0} max={100} onChange={handle4Change} />
             </label>
             <label><h3>v6</h3>
-            <NumericInput mobile className="form-control" min={0} max={100} onChange={handle5Change} />
+            <FormInput4  className="form-control" min={0} max={100} onChange={handle5Change} />
             </label>
             </div>
             <div class="row">
             <label><h3>v7</h3>
-            <NumericInput mobile className="form-control" min={0} max={100} onChange={handle6Change} />
+            <FormInput4  className="form-control" min={0} max={100} onChange={handle6Change} />
             </label>
             <label><h3>v8</h3>
-            <NumericInput mobile className="form-control" min={0} max={100} onChange={handle7Change} />
+            <FormInput4  className="form-control" min={0} max={100} onChange={handle7Change} />
             </label>
             </div>
             <div class="row">
             <label><h3>v9</h3>
-            <NumericInput mobile className="form-control" min={0} max={100} onChange={handle8Change} />
+            <FormInput4  className="form-control" min={0} max={100} onChange={handle8Change} />
             </label>
             <label><h3>v10</h3>
-            <NumericInput mobile className="form-control" min={0} max={100} onChange={handle9Change} />
+            <FormInput4  className="form-control" min={0} max={100} onChange={handle9Change} />
             </label>
             </div>
             <div class="row">
             <label><h3>v11</h3>
-            <NumericInput mobile className="form-control" min={0} max={100} onChange={handle10Change} />
+            <FormInput4  className="form-control" min={0} max={100} onChange={handle10Change} />
             </label>
             <label><h3>v12</h3>
-            <NumericInput mobile className="form-control" min={0} max={100} onChange={handle11Change} />
+            <FormInput4  className="form-control" min={0} max={100} onChange={handle11Change} />
             </label>
             </div>
             <div class="row">
             <label><h3>v13</h3>
-            <NumericInput mobile className="form-control" min={0} max={100} onChange={handle12Change} />
+            <FormInput4  className="form-control" min={0} max={100} onChange={handle12Change} />
             </label>
             <label><h3>v14</h3>
-            <NumericInput mobile className="form-control" min={0} max={100} onChange={handle13Change} />
+            <FormInput4  className="form-control" min={0} max={100} onChange={handle13Change} />
             </label>
             </div>
             <div class="row">
             <label><h3>v15</h3>
-            <NumericInput mobile className="form-control" min={0} max={100} onChange={handle14Change} />
+            <FormInput4  className="form-control" min={0} max={100} onChange={handle14Change} />
             </label>
             <label><h3>v16</h3>
-            <NumericInput mobile className="form-control" min={0} max={100} onChange={handle15Change} />
+            <FormInput4  className="form-control" min={0} max={100} onChange={handle15Change} />
             </label>
             </div>
             <div class="row">
             <label><h3>v17</h3>
-            <NumericInput mobile className="form-control" min={0} max={100} onChange={handle16Change} />
+            <FormInput4  className="form-control" min={0} max={100} onChange={handle16Change} />
             </label>
             </div>
                 <View style={styles.row}>
